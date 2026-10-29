@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "name": "🎬 Full Project (Root)",
+      "path": "."
+    },
+    {
+      "name": "⚡ Backend API (Node.js/Express)",
+      "path": "backend"
+    },
+    {
+      "name": "🎨 Frontend UI (React/Vite/Tailwind)",
+      "path": "frontend"
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "files.associations": {
+      "*.css": "tailwindcss",
+      ".env*": "dotenv",
+      "*.jsx": "javascriptreact"
+    },
+    "css.lint.unknownAtRules": "ignore",
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true
+    }
+  }
+}

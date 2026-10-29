@@ -1,0 +1,63 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "🟢 Backend: Express Server",
+      "program": "${workspaceFolder}/backend/server.js",
+      "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "🌐 Frontend: Launch in Edge (Windows)",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/frontend/src",
+      "sourceMaps": true
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "🌐 Frontend: Launch in Chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/frontend/src",
+      "sourceMaps": true
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "🚀 Production Preview (Port 5000)",
+      "url": "http://localhost:5000",
+      "webRoot": "${workspaceFolder}/frontend/dist"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "🔗 Attach to Backend Debugger (Port 9229)",
+      "port": 9229,
+      "restart": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "⚡ Full Stack: Backend + Edge Browser",
+      "configurations": [
+        "🟢 Backend: Express Server",
+        "🌐 Frontend: Launch in Edge (Windows)"
+      ],
+      "stopAll": true
+    },
+    {
+      "name": "⚡ Full Stack: Backend + Chrome Browser",
+      "configurations": [
+        "🟢 Backend: Express Server",
+        "🌐 Frontend: Launch in Chrome"
+      ],
+      "stopAll": true
+    }
+  ]
+}

@@ -1,0 +1,1412 @@
+{
+  "users": [
+    {
+      "userId": "usr_admin_1",
+      "name": "System Administrator",
+      "email": "admin@eticket.com",
+      "password": "admin123",
+      "phone": "+91 9876543210",
+      "role": "admin",
+      "status": "active",
+      "createdAt": "2026-01-10T10:00:00.000Z"
+    },
+    {
+      "userId": "usr_host_1",
+      "name": "PVR INOX Entertainments",
+      "email": "host@pvr.com",
+      "password": "host123",
+      "phone": "+91 9811122233",
+      "role": "host",
+      "upiId": "8140240572@pthdfc",
+      "upiName": "PVR CINEMAS ENTERTAINMENT LTD",
+      "status": "active",
+      "createdAt": "2026-01-12T10:00:00.000Z"
+    },
+    {
+      "userId": "usr_host_2",
+      "name": "Cinépolis Luxury Cinemas",
+      "email": "host@cinepolis.com",
+      "password": "host123",
+      "phone": "+91 9822233344",
+      "role": "host",
+      "upiId": "cinepolis.india@okhdfcbank",
+      "upiName": "CINEPOLIS INDIA PVT LTD",
+      "status": "active",
+      "createdAt": "2026-01-15T10:00:00.000Z"
+    },
+    {
+      "userId": "usr_user_1",
+      "name": "Mihir Sharma",
+      "email": "user@demo.com",
+      "password": "user123",
+      "phone": "+91 9899988877",
+      "role": "user",
+      "status": "active",
+      "createdAt": "2026-02-01T10:00:00.000Z"
+    },
+    {
+      "userId": "usr_user_2",
+      "name": "Aanya Patel",
+      "email": "aanya@example.com",
+      "password": "user123",
+      "phone": "+91 9877766655",
+      "role": "user",
+      "status": "active",
+      "createdAt": "2026-02-10T10:00:00.000Z"
+    }
+  ],
+  "theaters": [
+    {
+      "theaterId": "th_1",
+      "hostId": "usr_host_1",
+      "name": "PVR Director's Cut, Palladium",
+      "location": "High Street Phoenix, Lower Parel",
+      "city": "Mumbai",
+      "totalScreens": 2,
+      "screens": [
+        {
+          "screenId": "sc_1",
+          "name": "Audi 1 - IMAX with Laser 3D",
+          "capacity": 64,
+          "rows": 8,
+          "cols": 8
+        },
+        {
+          "screenId": "sc_2",
+          "name": "Audi 2 - Dolby Atmos 4K",
+          "capacity": 64,
+          "rows": 8,
+          "cols": 8
+        }
+      ],
+      "amenities": [
+        "IMAX",
+        "Laser 4K",
+        "Dolby Atmos",
+        "Gourmet Dining",
+        "Recliner Lounges"
+      ]
+    },
+    {
+      "theaterId": "th_2",
+      "hostId": "usr_host_1",
+      "name": "PVR Superplex, Mall of India",
+      "location": "Sector 18",
+      "city": "Delhi NCR",
+      "totalScreens": 2,
+      "screens": [
+        {
+          "screenId": "sc_3",
+          "name": "Audi 1 - 4DX Dynamic Experience",
+          "capacity": 64,
+          "rows": 8,
+          "cols": 8
+        },
+        {
+          "screenId": "sc_4",
+          "name": "Audi 2 - P[XL] Giant Screen",
+          "capacity": 64,
+          "rows": 8,
+          "cols": 8
+        }
+      ],
+      "amenities": [
+        "4DX",
+        "P[XL]",
+        "Dolby 7.1",
+        "Valet Parking",
+        "Cafe"
+      ]
+    },
+    {
+      "theaterId": "th_3",
+      "hostId": "usr_host_2",
+      "name": "Cinépolis VIP, Forum South",
+      "location": "Kanakapura Road, Konanakunte",
+      "city": "Bengaluru",
+      "totalScreens": 1,
+      "screens": [
+        {
+          "screenId": "sc_5",
+          "name": "VIP Screen 1 - Recliner Suite",
+          "capacity": 64,
+          "rows": 8,
+          "cols": 8
+        }
+      ],
+      "amenities": [
+        "VIP Recliner",
+        "In-Seat Butler Service",
+        "Dolby Atmos",
+        "Free Popcorn Refill"
+      ]
+    }
+  ],
+  "movies": [
+    {
+      "movieId": "mov_1",
+      "title": "Dune: Part Two",
+      "genre": "Sci-Fi / Adventure / Drama",
+      "duration": 166,
+      "language": "English",
+      "rating": "8.6",
+      "certification": "UA 16+",
+      "releaseDate": "2024-03-01",
+      "poster": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+      "banner": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1600&q=80",
+      "description": "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the universe, he endeavors to prevent a terrible future.",
+      "director": "Denis Villeneuve",
+      "cast": [
+        "Timothée Chalamet",
+        "Zendaya",
+        "Rebecca Ferguson",
+        "Javier Bardem",
+        "Austin Butler"
+      ],
+      "formats": [
+        "IMAX 2D",
+        "4DX",
+        "Dolby Atmos"
+      ]
+    },
+    {
+      "movieId": "mov_2",
+      "title": "Interstellar: Special IMAX Re-Release",
+      "genre": "Sci-Fi / Drama / Adventure",
+      "duration": 169,
+      "language": "English",
+      "rating": "8.9",
+      "certification": "UA",
+      "releaseDate": "2014-11-07",
+      "poster": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+      "banner": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80",
+      "description": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
+      "director": "Christopher Nolan",
+      "cast": [
+        "Matthew McConaughey",
+        "Anne Hathaway",
+        "Jessica Chastain",
+        "Michael Caine"
+      ],
+      "formats": [
+        "IMAX 70mm",
+        "Dolby Atmos 4K"
+      ]
+    },
+    {
+      "movieId": "mov_3",
+      "title": "Oppenheimer",
+      "genre": "Biography / Drama / History",
+      "duration": 180,
+      "language": "English",
+      "rating": "8.9",
+      "certification": "A",
+      "releaseDate": "2023-07-21",
+      "poster": "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=800&q=80",
+      "banner": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1600&q=80",
+      "description": "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb during the Manhattan Project.",
+      "director": "Christopher Nolan",
+      "cast": [
+        "Cillian Murphy",
+        "Emily Blunt",
+        "Matt Damon",
+        "Robert Downey Jr.",
+        "Florence Pugh"
+      ],
+      "formats": [
+        "IMAX Laser",
+        "Standard 2D"
+      ]
+    },
+    {
+      "movieId": "mov_4",
+      "title": "Spider-Man: Across the Spider-Verse",
+      "genre": "Animation / Action / Adventure",
+      "duration": 140,
+      "language": "English / Hindi",
+      "rating": "8.7",
+      "certification": "U",
+      "releaseDate": "2023-06-02",
+      "poster": "https://images.unsplash.com/photo-1635805737707-575885ab0820?auto=format&fit=crop&w=800&q=80",
+      "banner": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1600&q=80",
+      "description": "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence. When the heroes clash on how to handle a new threat, Miles must redefine what it means to be a hero.",
+      "director": "Joaquim Dos Santos, Kemp Powers",
+      "cast": [
+        "Shameik Moore",
+        "Hailee Steinfeld",
+        "Oscar Isaac",
+        "Daniel Kaluuya"
+      ],
+      "formats": [
+        "3D",
+        "IMAX 3D",
+        "4DX"
+      ]
+    },
+    {
+      "movieId": "mov_5",
+      "title": "Inception",
+      "genre": "Sci-Fi / Action / Thriller",
+      "duration": 148,
+      "language": "English",
+      "rating": "8.8",
+      "certification": "UA",
+      "releaseDate": "2010-07-16",
+      "poster": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
+      "banner": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80",
+      "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
+      "director": "Christopher Nolan",
+      "cast": [
+        "Leonardo DiCaprio",
+        "Joseph Gordon-Levitt",
+        "Elliot Page",
+        "Tom Hardy"
+      ],
+      "formats": [
+        "IMAX 2D",
+        "Dolby Cinema"
+      ]
+    },
+    {
+      "movieId": "mov_6",
+      "title": "Avengers: Endgame",
+      "genre": "Action / Sci-Fi / Adventure",
+      "duration": 181,
+      "language": "English / Hindi",
+      "rating": "8.4",
+      "certification": "UA",
+      "releaseDate": "2019-04-26",
+      "poster": "https://images.unsplash.com/photo-1568832359672-e36cf5d74f54?auto=format&fit=crop&w=800&q=80",
+      "banner": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1600&q=80",
+      "description": "After the devastating events of Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos actions and restore balance to the universe.",
+      "director": "Anthony & Joe Russo",
+      "cast": [
+        "Robert Downey Jr.",
+        "Chris Evans",
+        "Mark Ruffalo",
+        "Chris Hemsworth",
+        "Scarlett Johansson"
+      ],
+      "formats": [
+        "IMAX 3D",
+        "4DX",
+        "Dolby Atmos"
+      ]
+    }
+  ],
+  "shows": [
+    {
+      "showId": "sh_101",
+      "movieId": "mov_1",
+      "theaterId": "th_1",
+      "screenId": "sc_1",
+      "hostId": "usr_host_1",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "format": "IMAX 3D",
+      "date": "2026-10-08",
+      "time": "14:30",
+      "price": 450,
+      "tierPricing": {
+        "silver": 280,
+        "gold": 450,
+        "vip": 750
+      }
+    },
+    {
+      "showId": "sh_102",
+      "movieId": "mov_1",
+      "theaterId": "th_1",
+      "screenId": "sc_1",
+      "hostId": "usr_host_1",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "format": "IMAX 3D",
+      "date": "2026-10-08",
+      "time": "18:45",
+      "price": 520,
+      "tierPricing": {
+        "silver": 320,
+        "gold": 520,
+        "vip": 850
+      }
+    },
+    {
+      "showId": "sh_103",
+      "movieId": "mov_1",
+      "theaterId": "th_1",
+      "screenId": "sc_1",
+      "hostId": "usr_host_1",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "format": "IMAX 3D",
+      "date": "2026-10-09",
+      "time": "15:00",
+      "price": 450,
+      "tierPricing": {
+        "silver": 280,
+        "gold": 450,
+        "vip": 750
+      }
+    },
+    {
+      "showId": "sh_104",
+      "movieId": "mov_2",
+      "theaterId": "th_1",
+      "screenId": "sc_2",
+      "hostId": "usr_host_1",
+      "screenName": "Audi 2 - Dolby Atmos 4K",
+      "format": "Dolby Atmos",
+      "date": "2026-10-08",
+      "time": "20:15",
+      "price": 480,
+      "tierPricing": {
+        "silver": 290,
+        "gold": 480,
+        "vip": 790
+      }
+    },
+    {
+      "showId": "sh_105",
+      "movieId": "mov_2",
+      "theaterId": "th_2",
+      "screenId": "sc_4",
+      "hostId": "usr_host_1",
+      "screenName": "Audi 2 - P[XL] Giant Screen",
+      "format": "P[XL] 2D",
+      "date": "2026-10-08",
+      "time": "17:30",
+      "price": 390,
+      "tierPricing": {
+        "silver": 250,
+        "gold": 390,
+        "vip": 650
+      }
+    },
+    {
+      "showId": "sh_106",
+      "movieId": "mov_3",
+      "theaterId": "th_2",
+      "screenId": "sc_3",
+      "hostId": "usr_host_1",
+      "screenName": "Audi 1 - 4DX Dynamic Experience",
+      "format": "4DX 2D",
+      "date": "2026-10-08",
+      "time": "19:00",
+      "price": 550,
+      "tierPricing": {
+        "silver": 350,
+        "gold": 550,
+        "vip": 890
+      }
+    },
+    {
+      "showId": "sh_107",
+      "movieId": "mov_4",
+      "theaterId": "th_3",
+      "screenId": "sc_5",
+      "hostId": "usr_host_2",
+      "screenName": "VIP Screen 1 - Recliner Suite",
+      "format": "VIP 3D",
+      "date": "2026-10-08",
+      "time": "16:00",
+      "price": 600,
+      "tierPricing": {
+        "silver": 380,
+        "gold": 600,
+        "vip": 990
+      }
+    },
+    {
+      "showId": "sh_108",
+      "movieId": "mov_5",
+      "theaterId": "th_3",
+      "screenId": "sc_5",
+      "hostId": "usr_host_2",
+      "screenName": "VIP Screen 1 - Recliner Suite",
+      "format": "VIP 2D",
+      "date": "2026-10-09",
+      "time": "20:00",
+      "price": 650,
+      "tierPricing": {
+        "silver": 400,
+        "gold": 650,
+        "vip": 1050
+      }
+    },
+    {
+      "showId": "sh_1792647313286",
+      "movieId": "mov_3",
+      "theaterId": "th_1",
+      "screenId": "sc_1",
+      "hostId": "usr_host_1",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "format": "Dolby Atmos 4K",
+      "date": "2026-10-22",
+      "time": "18:30",
+      "price": 450,
+      "tierPricing": {
+        "silver": 280,
+        "gold": 450,
+        "vip": 750
+      }
+    },
+    {
+      "showId": "sh_1792665781859",
+      "movieId": "mov_1",
+      "theaterId": "th_1",
+      "screenId": "sc_1",
+      "hostId": "usr_host_1",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "format": "IMAX 3D",
+      "date": "2026-10-22",
+      "time": "18:30",
+      "price": 450,
+      "tierPricing": {
+        "silver": 280,
+        "gold": 450,
+        "vip": 750
+      }
+    }
+  ],
+  "seatLocks": [
+    {
+      "showId": "sh_101",
+      "seatNumber": "B4",
+      "status": "BOOKED",
+      "userId": "usr_user_2",
+      "bookingId": "bk_demo_101"
+    },
+    {
+      "showId": "sh_101",
+      "seatNumber": "B5",
+      "status": "BOOKED",
+      "userId": "usr_user_2",
+      "bookingId": "bk_demo_101"
+    },
+    {
+      "showId": "sh_102",
+      "seatNumber": "D4",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_demo_102"
+    },
+    {
+      "showId": "sh_104",
+      "seatNumber": "C1",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1791459406588_177",
+      "bookedAt": "2026-10-08T11:37:13.450Z"
+    },
+    {
+      "showId": "sh_104",
+      "seatNumber": "C2",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1791459406588_177",
+      "bookedAt": "2026-10-08T11:37:13.450Z"
+    },
+    {
+      "showId": "sh_104",
+      "seatNumber": "C3",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1791459406588_177",
+      "bookedAt": "2026-10-08T11:37:13.450Z"
+    },
+    {
+      "showId": "sh_104",
+      "seatNumber": "C4",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1791459406588_177",
+      "bookedAt": "2026-10-08T11:37:13.450Z"
+    },
+    {
+      "showId": "sh_1792647313286",
+      "seatNumber": "A3",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1792648204947_768",
+      "bookedAt": "2026-10-22T05:50:26.287Z"
+    },
+    {
+      "showId": "sh_1792647313286",
+      "seatNumber": "A4",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1792648204947_768",
+      "bookedAt": "2026-10-22T05:50:26.287Z"
+    },
+    {
+      "showId": "sh_1792647313286",
+      "seatNumber": "F3",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1792648204947_768",
+      "bookedAt": "2026-10-22T05:50:26.287Z"
+    },
+    {
+      "showId": "sh_1792647313286",
+      "seatNumber": "F4",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1792648204947_768",
+      "bookedAt": "2026-10-22T05:50:26.287Z"
+    },
+    {
+      "showId": "sh_1792647313286",
+      "seatNumber": "C8",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1792665639970_195",
+      "bookedAt": "2026-10-22T10:40:57.906Z"
+    },
+    {
+      "showId": "sh_1792665781859",
+      "seatNumber": "B1",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1792665800221_974",
+      "bookedAt": "2026-10-22T10:43:24.288Z"
+    },
+    {
+      "showId": "sh_1792665781859",
+      "seatNumber": "B2",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1792665800221_974",
+      "bookedAt": "2026-10-22T10:43:24.288Z"
+    },
+    {
+      "showId": "sh_1792665781859",
+      "seatNumber": "A3",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1792668617793_36",
+      "bookedAt": "2026-10-22T11:30:40.843Z"
+    },
+    {
+      "showId": "sh_1792665781859",
+      "seatNumber": "A4",
+      "status": "BOOKED",
+      "userId": "usr_user_1",
+      "bookingId": "bk_1792668617793_36",
+      "bookedAt": "2026-10-22T11:30:40.843Z"
+    }
+  ],
+  "bookings": [
+    {
+      "bookingId": "bk_1792668965607_259",
+      "userId": "usr_user_1",
+      "showId": "sh_1792647313286",
+      "movieTitle": "Oppenheimer",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-22",
+      "showTime": "18:30",
+      "seats": [
+        {
+          "seatNumber": "A2",
+          "row": "A",
+          "col": 2,
+          "type": "VIP",
+          "price": 750
+        }
+      ],
+      "ticketCount": 1,
+      "subtotal": 750,
+      "convenienceFee": 25,
+      "tax": 140,
+      "totalAmount": 915,
+      "status": "PENDING",
+      "paymentId": null,
+      "ticketId": null,
+      "bookingDate": "2026-10-22T11:36:05.607Z"
+    },
+    {
+      "bookingId": "bk_1792668657609_998",
+      "userId": "usr_user_1",
+      "showId": "sh_1792665781859",
+      "movieTitle": "Dune: Part Two",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-22",
+      "showTime": "18:30",
+      "seats": [
+        {
+          "seatNumber": "C5",
+          "row": "C",
+          "col": 5,
+          "type": "Gold",
+          "price": 450
+        }
+      ],
+      "ticketCount": 1,
+      "subtotal": 450,
+      "convenienceFee": 25,
+      "tax": 86,
+      "totalAmount": 561,
+      "status": "PENDING",
+      "paymentId": null,
+      "ticketId": null,
+      "bookingDate": "2026-10-22T11:30:57.609Z"
+    },
+    {
+      "bookingId": "bk_1792668617793_36",
+      "userId": "usr_user_1",
+      "showId": "sh_1792665781859",
+      "movieTitle": "Dune: Part Two",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-22",
+      "showTime": "18:30",
+      "seats": [
+        {
+          "seatNumber": "A3",
+          "row": "A",
+          "col": 3,
+          "type": "VIP",
+          "price": 750
+        },
+        {
+          "seatNumber": "A4",
+          "row": "A",
+          "col": 4,
+          "type": "VIP",
+          "price": 750
+        }
+      ],
+      "ticketCount": 2,
+      "subtotal": 1500,
+      "convenienceFee": 50,
+      "tax": 279,
+      "totalAmount": 1829,
+      "status": "CONFIRMED",
+      "paymentId": "pay_1792668640842_268",
+      "ticketId": "tkt_1792668640844_809",
+      "bookingDate": "2026-10-22T11:30:17.793Z",
+      "confirmedAt": "2026-10-22T11:30:40.864Z"
+    },
+    {
+      "bookingId": "bk_1792665800221_974",
+      "userId": "usr_user_1",
+      "showId": "sh_1792665781859",
+      "movieTitle": "Dune: Part Two",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-22",
+      "showTime": "18:30",
+      "seats": [
+        {
+          "seatNumber": "B1",
+          "row": "B",
+          "col": 1,
+          "type": "VIP",
+          "price": 750
+        },
+        {
+          "seatNumber": "B2",
+          "row": "B",
+          "col": 2,
+          "type": "VIP",
+          "price": 750
+        }
+      ],
+      "ticketCount": 2,
+      "subtotal": 1500,
+      "convenienceFee": 50,
+      "tax": 279,
+      "totalAmount": 1829,
+      "status": "CONFIRMED",
+      "paymentId": "pay_1792665804287_350",
+      "ticketId": "tkt_1792665804289_299",
+      "bookingDate": "2026-10-22T10:43:20.221Z",
+      "confirmedAt": "2026-10-22T10:43:24.301Z"
+    },
+    {
+      "bookingId": "bk_1792665639970_195",
+      "userId": "usr_user_1",
+      "showId": "sh_1792647313286",
+      "movieTitle": "Oppenheimer",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-22",
+      "showTime": "18:30",
+      "seats": [
+        {
+          "seatNumber": "C8",
+          "row": "C",
+          "col": 8,
+          "type": "Gold",
+          "price": 450
+        }
+      ],
+      "ticketCount": 1,
+      "subtotal": 450,
+      "convenienceFee": 25,
+      "tax": 86,
+      "totalAmount": 561,
+      "status": "CONFIRMED",
+      "paymentId": "pay_1792665657905_158",
+      "ticketId": "tkt_1792665657907_226",
+      "bookingDate": "2026-10-22T10:40:39.970Z",
+      "confirmedAt": "2026-10-22T10:40:57.924Z"
+    },
+    {
+      "bookingId": "bk_1792659067768_395",
+      "userId": "usr_user_1",
+      "showId": "sh_1792647313286",
+      "movieTitle": "Oppenheimer",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-22",
+      "showTime": "18:30",
+      "seats": [
+        {
+          "seatNumber": "C1",
+          "row": "C",
+          "col": 1,
+          "type": "Gold",
+          "price": 450
+        },
+        {
+          "seatNumber": "C2",
+          "row": "C",
+          "col": 2,
+          "type": "Gold",
+          "price": 450
+        }
+      ],
+      "ticketCount": 2,
+      "subtotal": 900,
+      "convenienceFee": 50,
+      "tax": 171,
+      "totalAmount": 1121,
+      "status": "PENDING",
+      "paymentId": null,
+      "ticketId": null,
+      "bookingDate": "2026-10-22T08:51:07.769Z"
+    },
+    {
+      "bookingId": "bk_1792648204947_768",
+      "userId": "usr_user_1",
+      "showId": "sh_1792647313286",
+      "movieTitle": "Oppenheimer",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-22",
+      "showTime": "18:30",
+      "seats": [
+        {
+          "seatNumber": "A3",
+          "row": "A",
+          "col": 3,
+          "type": "VIP",
+          "price": 750
+        },
+        {
+          "seatNumber": "A4",
+          "row": "A",
+          "col": 4,
+          "type": "VIP",
+          "price": 750
+        },
+        {
+          "seatNumber": "F3",
+          "row": "F",
+          "col": 3,
+          "type": "Silver",
+          "price": 280
+        },
+        {
+          "seatNumber": "F4",
+          "row": "F",
+          "col": 4,
+          "type": "Silver",
+          "price": 280
+        }
+      ],
+      "ticketCount": 4,
+      "subtotal": 2060,
+      "convenienceFee": 100,
+      "tax": 389,
+      "totalAmount": 2549,
+      "status": "CONFIRMED",
+      "paymentId": "pay_1792648226286_447",
+      "ticketId": "tkt_1792648226288_282",
+      "bookingDate": "2026-10-22T05:50:04.947Z",
+      "confirmedAt": "2026-10-22T05:50:26.304Z"
+    },
+    {
+      "bookingId": "bk_1791459406588_177",
+      "userId": "usr_user_1",
+      "showId": "sh_104",
+      "movieTitle": "Interstellar: Special IMAX Re-Release",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 2 - Dolby Atmos 4K",
+      "showDate": "2026-10-08",
+      "showTime": "20:15",
+      "seats": [
+        {
+          "seatNumber": "C1",
+          "row": "C",
+          "col": 1,
+          "type": "Gold",
+          "price": 480
+        },
+        {
+          "seatNumber": "C2",
+          "row": "C",
+          "col": 2,
+          "type": "Gold",
+          "price": 480
+        },
+        {
+          "seatNumber": "C3",
+          "row": "C",
+          "col": 3,
+          "type": "Gold",
+          "price": 480
+        },
+        {
+          "seatNumber": "C4",
+          "row": "C",
+          "col": 4,
+          "type": "Gold",
+          "price": 480
+        }
+      ],
+      "ticketCount": 4,
+      "subtotal": 1920,
+      "convenienceFee": 100,
+      "tax": 364,
+      "totalAmount": 2384,
+      "status": "CONFIRMED",
+      "paymentId": "pay_1791459433449_540",
+      "ticketId": "tkt_1791459433451_901",
+      "bookingDate": "2026-10-08T11:36:46.588Z",
+      "confirmedAt": "2026-10-08T11:37:13.474Z"
+    },
+    {
+      "bookingId": "bk_1791459175528_205",
+      "userId": "usr_user_1",
+      "showId": "sh_101",
+      "movieTitle": "Dune: Part Two",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-08",
+      "showTime": "14:30",
+      "seats": [
+        {
+          "seatNumber": "C1",
+          "row": "C",
+          "col": 1,
+          "type": "Gold",
+          "price": 450
+        },
+        {
+          "seatNumber": "C2",
+          "row": "C",
+          "col": 2,
+          "type": "Gold",
+          "price": 450
+        }
+      ],
+      "ticketCount": 2,
+      "subtotal": 900,
+      "convenienceFee": 50,
+      "tax": 171,
+      "totalAmount": 1121,
+      "status": "CANCELLED",
+      "paymentId": "pay_1791459175583_495",
+      "ticketId": "tkt_1791459175585_93",
+      "bookingDate": "2026-10-08T11:32:55.528Z",
+      "confirmedAt": "2026-10-08T11:32:55.624Z",
+      "cancelledAt": "2026-10-22T05:50:38.357Z",
+      "cancelledBy": "usr_user_1"
+    },
+    {
+      "bookingId": "bk_1791458921527_133",
+      "userId": "usr_user_1",
+      "showId": "sh_101",
+      "movieTitle": "Dune: Part Two",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-08",
+      "showTime": "14:30",
+      "seats": [
+        {
+          "seatNumber": "A1",
+          "row": "A",
+          "col": 1,
+          "type": "VIP",
+          "price": 750
+        },
+        {
+          "seatNumber": "A2",
+          "row": "A",
+          "col": 2,
+          "type": "VIP",
+          "price": 750
+        }
+      ],
+      "ticketCount": 2,
+      "subtotal": 1500,
+      "convenienceFee": 50,
+      "tax": 279,
+      "totalAmount": 1829,
+      "status": "PENDING",
+      "paymentId": null,
+      "ticketId": null,
+      "bookingDate": "2026-10-08T11:28:41.527Z"
+    },
+    {
+      "bookingId": "bk_demo_102",
+      "userId": "usr_user_1",
+      "showId": "sh_102",
+      "movieId": "mov_1",
+      "movieTitle": "Dune: Part Two",
+      "theaterId": "th_1",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "hostId": "usr_host_1",
+      "showDate": "2026-10-08",
+      "showTime": "18:45",
+      "seats": [
+        {
+          "seatNumber": "D4",
+          "row": "D",
+          "type": "Gold",
+          "price": 520
+        }
+      ],
+      "ticketCount": 1,
+      "subtotal": 520,
+      "convenienceFee": 40,
+      "tax": 93.6,
+      "totalAmount": 653.6,
+      "status": "CONFIRMED",
+      "paymentId": "pay_demo_102",
+      "bookingDate": "2026-10-07T15:10:00.000Z"
+    },
+    {
+      "bookingId": "bk_demo_101",
+      "userId": "usr_user_2",
+      "showId": "sh_101",
+      "movieId": "mov_1",
+      "movieTitle": "Dune: Part Two",
+      "theaterId": "th_1",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "hostId": "usr_host_1",
+      "showDate": "2026-10-08",
+      "showTime": "14:30",
+      "seats": [
+        {
+          "seatNumber": "B4",
+          "row": "B",
+          "type": "VIP",
+          "price": 750
+        },
+        {
+          "seatNumber": "B5",
+          "row": "B",
+          "type": "VIP",
+          "price": 750
+        }
+      ],
+      "ticketCount": 2,
+      "subtotal": 1500,
+      "convenienceFee": 75,
+      "tax": 270,
+      "totalAmount": 1845,
+      "status": "CONFIRMED",
+      "paymentId": "pay_demo_101",
+      "bookingDate": "2026-10-07T11:20:00.000Z"
+    }
+  ],
+  "payments": [
+    {
+      "paymentId": "pay_demo_101",
+      "bookingId": "bk_demo_101",
+      "amount": 1845,
+      "method": "HOST_UPI_QR",
+      "hostUpiId": "pvr.cinemas@icici",
+      "hostName": "PVR CINEMAS ENTERTAINMENT LTD",
+      "utrNumber": "UPI429019284102",
+      "status": "SUCCESS",
+      "paymentDate": "2026-10-07T11:22:15.000Z"
+    },
+    {
+      "paymentId": "pay_demo_102",
+      "bookingId": "bk_demo_102",
+      "amount": 653.6,
+      "method": "HOST_UPI_QR",
+      "hostUpiId": "pvr.cinemas@icici",
+      "hostName": "PVR CINEMAS ENTERTAINMENT LTD",
+      "utrNumber": "UPI429019284199",
+      "status": "SUCCESS",
+      "paymentDate": "2026-10-07T15:11:30.000Z"
+    },
+    {
+      "paymentId": "pay_1791459175583_495",
+      "bookingId": "bk_1791459175528_205",
+      "amount": 1121,
+      "method": "HOST_UPI_QR",
+      "status": "REFUNDED",
+      "paymentDate": "2026-10-08T11:32:55.583Z",
+      "hostUpiId": "host.boxoffice@icici",
+      "hostName": "Cinema Organizer",
+      "utrNumber": "UPI_TEST_99887766",
+      "gatewayRef": "",
+      "refundedAt": "2026-10-22T05:50:38.355Z"
+    },
+    {
+      "paymentId": "pay_1791459433449_540",
+      "bookingId": "bk_1791459406588_177",
+      "amount": 2384,
+      "method": "HOST_UPI_QR",
+      "status": "SUCCESS",
+      "paymentDate": "2026-10-08T11:37:13.449Z",
+      "hostUpiId": "host.boxoffice@icici",
+      "hostName": "Cinema Organizer",
+      "utrNumber": "UPI_SIM_1791459433439",
+      "gatewayRef": ""
+    },
+    {
+      "paymentId": "pay_1792648226286_447",
+      "bookingId": "bk_1792648204947_768",
+      "amount": 2549,
+      "method": "HOST_UPI_QR",
+      "status": "SUCCESS",
+      "paymentDate": "2026-10-22T05:50:26.286Z",
+      "hostUpiId": "host.boxoffice@icici",
+      "hostName": "Cinema Organizer",
+      "utrNumber": "UPI_SIM_1792648226284",
+      "gatewayRef": ""
+    },
+    {
+      "paymentId": "pay_1792665657905_158",
+      "bookingId": "bk_1792665639970_195",
+      "amount": 561,
+      "method": "HOST_UPI_QR",
+      "status": "SUCCESS",
+      "paymentDate": "2026-10-22T10:40:57.905Z",
+      "hostUpiId": "host.boxoffice@icici",
+      "hostName": "Cinema Organizer",
+      "utrNumber": "UPI_SIM_1792665657901",
+      "gatewayRef": ""
+    },
+    {
+      "paymentId": "pay_1792665804287_350",
+      "bookingId": "bk_1792665800221_974",
+      "amount": 1829,
+      "method": "HOST_UPI_QR",
+      "status": "SUCCESS",
+      "paymentDate": "2026-10-22T10:43:24.287Z",
+      "hostUpiId": "host.boxoffice@icici",
+      "hostName": "Cinema Organizer",
+      "utrNumber": "UPI_SIM_1792665804284",
+      "gatewayRef": ""
+    },
+    {
+      "paymentId": "pay_1792668640842_268",
+      "bookingId": "bk_1792668617793_36",
+      "amount": 1829,
+      "method": "HOST_UPI_QR",
+      "status": "SUCCESS",
+      "paymentDate": "2026-10-22T11:30:40.842Z",
+      "hostUpiId": "host.boxoffice@icici",
+      "hostName": "Cinema Organizer",
+      "utrNumber": "UPI_SIM_1792668640835",
+      "gatewayRef": ""
+    }
+  ],
+  "tickets": [
+    {
+      "ticketId": "tkt_demo_101",
+      "bookingId": "bk_demo_101",
+      "showId": "sh_101",
+      "userId": "usr_user_2",
+      "movieTitle": "Dune: Part Two",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-08",
+      "showTime": "14:30",
+      "seatNumbers": [
+        "B4",
+        "B5"
+      ],
+      "totalAmount": 1845,
+      "QRCode": "ETKT-bk_demo_101-sh_101-B4-B5-VERIFIED",
+      "status": "VALID",
+      "generatedAt": "2026-10-07T11:22:16.000Z"
+    },
+    {
+      "ticketId": "tkt_demo_102",
+      "bookingId": "bk_demo_102",
+      "showId": "sh_102",
+      "userId": "usr_user_1",
+      "movieTitle": "Dune: Part Two",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-08",
+      "showTime": "18:45",
+      "seatNumbers": [
+        "D4"
+      ],
+      "totalAmount": 653.6,
+      "QRCode": "ETKT-bk_demo_102-sh_102-D4-VERIFIED",
+      "status": "VALID",
+      "generatedAt": "2026-10-07T15:11:31.000Z"
+    },
+    {
+      "ticketId": "tkt_1791459175585_93",
+      "bookingId": "bk_1791459175528_205",
+      "showId": "sh_101",
+      "userId": "usr_user_1",
+      "movieTitle": "Dune: Part Two",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-08",
+      "showTime": "14:30",
+      "seatNo": "C1, C2",
+      "seatNumbers": [
+        "C1",
+        "C2"
+      ],
+      "price": 1121,
+      "QRCode": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9AAAAAklEQVR4AewaftIAABYcSURBVO3BwY0d2a5t0alAGsAmfaD/piwf2Fwe6KuTACEg91XUOamqF59j/Pj5C2utR7tYaz3exVrr8S7WWo/3wW8ii7/JLd4pspjcYoosJreYIovJLd4pspjc4iSyuMMtpshicouvRBaTW5xEFiducRJZTG5xEllMbjFFFiduMUUWd7jFFFmcuMUUWfxNbvHpYq31eBdrrce7WGs93gf/g1u8U2TxishicouTyOIVkcXkFlNkMbnFFFlMbvEKt5giiymymNxiiiw+ucXkFlNkceIWJ5HFKyKLyS1O3GKKLKbI4g63+E5u8U6RxVcu1lqPd7HWeryLtdbjfXBTZHGHW9wRWUxucYdbTJHFSWQxucUUWUyRxR1ucRJZTG4xucWJW0yRxRRZTG7xlchicospspgii8ktJrc4iSymyGJyi5PI4g63eEVk8Z0iizvc4k9drLUe72Kt9XgXa63H++D/GLe4wy2myGJyiymyOHGLKbKYIovJLabIYnKLV0QWJ24xRRZfcYsTt5giiymymNxiiiwmt3gnt5giiymyeCe3mCKL/6qLtdbjXay1Hu9irfV4H/zHRRaTW5xEFpNbnEQWk1tMkcUUWdwRWUxucRJZTG7xisjiT0UWk1u8k1ucRBaTW0yRxR1ucUdkMbnFFFlMkcXkFv9VF2utx7tYaz3exVrr8T64yS3+f+IWd0QWJ5HFKyKLO9ziT0UWU2Rx4hZTZHESWZy4xYlbnEQWk1tMkcXkFq9wi3dyi+9ysdZ6vIu11uNdrLUe74P/IbL4N7nFFFlMbvEKt5gii8ktpshicosTt5gii8ktpsjiDreYIouTyOKTW5y4xRRZvJNbTJHF5BZTZDG5xX9JZDG5xUlk8bdcrLUe72Kt9XgXa63H+/HzF/5DIosTt7gjsrjDLabIYnKLKbI4cYspspjcYoosJreYIos73OJPRRYnbvGdIosTt5gii1e4xR2RxYlb/FddrLUe72Kt9XgXa63H+/HzF4bIYnKLKbJ4J7c4iSwmt7gjsjhxi1dEFne4xTtFFv8Wt5gii8ktpsjixC3+TZHFO7nFFFm8k1v8qYu11uNdrLUe72Kt9Xgf3OQWU2QxucV3iizeKbKY3OKd3OKOyGJyiymyOHGLKbKY3OJTZHHiFq+ILCa3uCOyOHGLKbI4cYsTt5gii8ktpshicos73OIkspjcYoosJrf4ysVa6/Eu1lqPd7HWerwP/rLI4g63mCKLV7jFFFlMkcXkFidu8U5uceIWU2Rx4hZTZPHJLU4ii1e4xRRZTG7xTm7xisjiJLI4iSwmt5jc4iSyeEVkMbnFp4u11uNdrLUe72Kt9Xgf3BRZ3BFZTG7xCre4I7I4cYspsjiJLCa3OIksJreYIos73GJyi3eJLE7c4p0iixO3eKfIYnKLE7eYIosTt5gii8kt7nCLd7lYaz3exVrr8S7WWo/3wU1uMUUWJ24xRRbv5BZTZDG5xRRZnLjFFFncEVn8l7nFV9xiiixOIosTt7jDLd4pspjcYoosJrc4cYspsngnt5gii8ktJrf4Uxdrrce7WGs93sVa6/E++I1bvCKyOHGLKbI4cYspsjhxizvcYoos/ia3OIks7ogsJreYIotPbjFFFpNbnLjFHW4xRRZ3RBaTW7zCLabI4sQtJre4I7KY3OJvuVhrPd7FWuvxLtZaj/fj5y8MkcX/ZW4xRRZ3uMVJZHHiFndEFiducUdkMbnFFFl8cot3iiwmt5gii8ktpshicotXRBZ3uMUUWUxuMUUWk1tMkcXkFlNkMbnFSWQxucUUWUxu8elirfV4F2utx7tYaz3ej5+/MEQWk1vcEVmcuMUdkcV3couTyGJyiymyOHGLKbI4cYuTyOLELU4ii6+4xb8psvhObvFOkcXkFieRxeQWJ5HF5BZTZHHiFp8u1lqPd7HWeryLtdbj/fj5CweRxeQWU2QxucUUWZy4xUlkMbnFFFn8TW7xXxJZnLjFd4ksXuEWJ5HFiVu8U2TxTm5xEllMbjFFFq9wi08Xa63Hu1hrPd7FWuvxPvhNZHESWbzCLabIYnKLyS2myOLELV4RWUxucUdkMbnFFFmcuMVJZHHiFieRxSe3mCKLyS1O3OIkspjc4jtFFpNbvJNbvCKymNxiiixe4RZfuVhrPd7FWuvxLtZaj/fj5y8MkcXkFlNk8U5uMUUWJ27xisjixC2myGJyi5PIYnKLk8hicos7IovJLabI4itucRJZnLjFFFm8k1u8IrK4wy2myOLELabIYnKLd4os7nCLTxdrrce7WGs93sVa6/E++I1bTJHF5BZ3RBaTW9zhFlNkMbnFFFlMbjG5xSsiizsii8ktTiKLyS3uiCwmt5gii69EFpNbTJHFiVucRBaTW0yRxRRZvJNbvFNkMbnFSWTxCrc4iSy+crHWeryLtdbjXay1Hu/Hz184iCxO3GKKLL6TW7xTZDG5xRRZvMItTiKLE7c4iSwmt5gii8kt3iWyOHGLk8hicot3iixe4RYnkcUdbjFFFpNbTJHFHW7xlYu11uNdrLUe72Kt9XgfvJlbTJHF5BZTZHFHZDG5xRRZ3OEWd7jFHZHF5BaTW0yRxUlkcRJZTG4xRRaf3GKKLCa3OHGLKbK4wy3uiCwmt7jDLU4iizvc4o7I4hVuMUUWf+pirfV4F2utx7tYaz3eB28WWUxuMUUWk1tMkcXkFieRxeQWJ5HFKyKLyS3uiCwmt5jc4sQtpsjiDrf4iltMkcU7RRaTW0yRxeQWk1vc4RZTZPGKyOLELabIYnKLKbK4I7I4iSwmt/h0sdZ6vIu11uNdrLUe74PfRBaTW0yRxRRZTG4xRRaTW0yRxUlkceIWr4gsTtxiiixOIovJLf4mtziJLL7iFiducRJZnLjFKyKLyS2myGJyi8ktpsjiDre4wy2myGJyiymyOHGLk8jiKxdrrce7WGs93sVa6/E++MsiixO3mCKLyS3uiCwmtziJLP6myOIVbnESWUxu8SmymCKLyS1OIot3cosTt5gii8kt3imyeIVbTG4xRRaTW0yRxRRZ/FMXa63Hu1hrPd7FWuvxfvz8hSGymNziJLK4wy2myOIOt5gii8ktpsjixC1OIos73OIkspjcYoosJrc4iSwmt/hTkcUdbnFHZDG5xRRZvMIt3imymNziJLKY3OIkspjc4iSymNzin7pYaz3exVrr8S7WWo/34+cv3BBZTG4xRRZ3uMXfFFlMbnFHZPE3ucUdkcU/5RZTZHHiFlNkceIWU2QxucVJZHHiFieRxeQWU2TxCreYIovJLabIYnKLKbI4cYspspjc4tPFWuvxLtZaj3ex1nq8D34TWbyTW5xEFpNbnEQWd7jFO7nFSWQxucUdkcVJZHHiFieRxSe3mCKLOyKLyS1eEVmcuMVJZDG5xR1uMUUWk1ucRBaTW0yRxeQWU2QxucW7XKy1Hu9irfV4F2utx/vx8xeGyGJyiymy+JvcYoosJre4I7KY3OIVkcXkFieRxeQWJ5HF5BYnkcW7uMUUWdzhFlNkMbnFSWQxucUdkcWJW0yRxeQWJ5HFv8kt/tTFWuvxLtZaj3ex1nq8D37jFiduMUUWJ25xR2QxRRZ/U2Rx4haTW5xEFieRxXdyiz8VWZy4xR2RxeQWU2Rx4hZTZDG5xRRZTG5xElmcRBaTW0xuMUUWk1vcEVlMbjFFFv/UxVrr8S7WWo93sdZ6vA9+E1mcuMUrIovJLU7c4jtFFpNbnEQWk1ucuMVJZHHiFlNk8YrI4pNbvFNkMbnFFFlMbjFFFlNkMbnFFFlMbnGHW0yRxR2RxR2RxeQWJ5HF5BZTZHHiFp8u1lqPd7HWerwPfuMW38kt7ogsXuEWJ24xRRYnbjFFFiduMUUWr3CLKbK4wy2+i1ucuMUUWZy4xRRZTG5xEllMbnHiFlNkMUUWr3CLO9zixC2myOIrF2utx7tYaz3exVrr8T74HyKLyS0mt5giiymyeIVbTJHF5BYnkcX/JW7xTpHFPxVZTG5xEllMbnGHW5y4xSsii8ktpsjinSKLV0QW73Kx1nq8i7XW412stR7vx89f+EaRxeQWr4gsXuEWU2Rx4hZ3RBYnbjFFFiduMUUW7+IW3ymymNxiiixe4RaviCxO3OIksjhxi5PIYnKLKbKY3GKKLCa3+MrFWuvxLtZaj3ex1nq8D34TWUxuMUUWd7jFFFm8wi2myGJyiymymCKLyS1OIovJLe5wi1dEFq9wiymy+EpkMbnFFFlMbvFObnESWUyRxeQWU2Rxh1tMkcUdbnESWZxEFieRxeQWU2QxucWni7XW412stR7vYq31eD9+/sILIos73GKKLCa3mCKLyS1OIovJLV4RWUxucUdkceIWr4gsJrf4WyKLyS3uiCzucIuTyGJyiymymNziJLKY3OKOyGJyizsii8ktTiKLyS0+Xay1Hu9irfV4F2utx/vgpsjiDreYIotXRBaTW5xEFpNbnEQWJ5HF5BYnbvGd3OIksviKW0yRxYlbnEQWk1tMkcXkFieRxRRZTG4xucUUWUxucRJZ3BFZnLjFFFnc4RZTZDG5xZ+6WGs93sVa6/Eu1lqP98H/EFlMbvEKtziJLO6ILO6ILCa3eEVkceIWd0QWk1tMkcXkFne4xZ9yi3dyiymymNxicospsjiJLCa3OIksXuEWd7jFFFlMbjFFFpNb/FMXa63Hu1hrPd7FWuvxfvz8hYPI4sQtTiKLO9xiiiwmtziJLF7hFndEFpNbTJHFiVu8IrKY3GKKLCa3+BRZvMItpshicospsrjDLV4RWdzhFlNk8Qq3mCKLd3KLKbKY3OLTxVrr8S7WWo93sdZ6vA9+E1lMbnFHZHHiFne4xRRZTG4xucUUWbxTZHGHW0yRxUlkMbnFFFm8IrL45BaviCwmtzhxiymyOIksJreYIovv5BZ3RBYnbnESWUxu8S4Xa63Hu1hrPd7FWuvxPvgfIot3iizucIvJLabI4sQtpshicotXuMVJZDG5xR2RxeQWd7jFFFl8l8hicospsjhxiymymCKLyS1OIos7IovJLabI4sQtTiKLyS3uiCwmt/hTF2utx7tYaz3exVrr8X78/IUbIovJLV4RWZy4xRRZTG4xRRavcIspsrjDLabIYnKLKbKY3GKKLE7c4rtEFpNbvFNkMbnFSWQxucUUWZy4xRRZ3OEWr4gsJre4I7I4cYuvXKy1Hu9irfV4F2utx/vx8xcOIovJLe6ILE7c4iSymNziJLJ4hVucRBaTW0yRxeQWU2QxucUdkcWJW0yRxVfcYoos7nCLKbKY3GKKLE7cYoosJre4I7I4cYspspjcYoos7nCLKbJ4hVtMkcWJW3y6WGs93sVa6/Eu1lqP9+PnL9wQWUxuMUUWJ24xRRZ3uMUrIovJLU4ii8ktpsjindxiiixO3GKKLCa3mCKLT25xEllMbvFOkcUdbnESWZy4xXeKLE7c4iSyOHGLKbI4cYtPF2utx7tYaz3exVrr8T54M7eYIospsrjDLe6ILCa3mNxiiiwmt5jc4g63mCKLyS1e4RZTZPFPRRZ3RBaTW0yRxSvcYoospsjixC1OIovJLabIYnKLKbI4cYuTyGJyizsii8ktpsjiKxdrrce7WGs93sVa6/E++E1kceIWU2Rx4hYnkcVJZDG5xRRZTG7xisjixC1OIovJLU4ii1e4xUlkMbnFp8jiDrc4cYspspjcYoos/ia3eIVb3BFZnEQWk1u8wi2+crHWeryLtdbjXay1Hu/Hz194QWTxndzinSKLE7eYIos73GKKLO5wizsii8kt3iWyOHGLOyKLyS2myGJyi1dEFne4xUlkceIWJ5HFHW5xElmcuMWni7XW412stR7vYq31eB/8JrI4cYs73OKOyGKKLE7cYoosJrd4J7c4iSwmt7gjspjc4sQtvotbTJHFFFlMbnFHZPGKyOLELU4ii5PI4sQt7nCLd3KLKbL4ysVa6/Eu1lqPd7HWerwPXuQWJ5HFK9xiiixO3GKKLCa3mCKLKbKY3GKKLCa3OIksTtxicospspjcYoosTtxiiiw+ucU7RRZ3uMVJZHGHW0yRxYlbTJHFHZHF5BZ3RBZ/y8Va6/Eu1lqPd7HWerwPfuMWU2QxRRaTW0yRxYlbnEQWJ24xRRaTW/yb3OIkspgii1e4xR1u8acii8ktpsjixC1e4RZTZHESWZy4xR1u8Te5xRRZTG5xEll85WKt9XgXa63Hu1hrPd6Pn79wQ2Txb3KLOyKLO9xiiiwmtziJLE7cYoosJre4I7KY3GKKLCa3+EpkMbnFHZHF5BZTZDG5xUlkMbnFFFm8wi2myOLELabIYnKLk8jiDrc4iSxO3OLTxVrr8S7WWo93sdZ6vB8/f2GILO5wiymymNziJLJ4hVvcEVnc4RYnkcWJW5xEFidu8V8VWUxucUdk8U5ucRJZTG4xRRaTW5xEFidu8TdFFpNbfLpYaz3exVrr8S7WWo/3wYsii8ktTiKLE7eYIouTyOLELV4RWZy4xRRZnEQWd0QWk1ucRBbv4hZTZDG5xRRZTG5xh1ucRBavcIs7IovJLe6ILF7hFlNkMbnFn7pYaz3exVrr8S7WWo/34+cv/IdEFpNbTJHFHW4xRRYnbnESWdzhFlNk8Te5xZ+KLCa3eEVkMbnFSWRxh1tMkcXkFndEFpNb3BFZTG5xR2TxCrf4ysVa6/Eu1lqPd7HWerwPfhNZ/E1uMbnFHW5xh1ucRBYnbjFFFne4xTtFFndEFp/c4iSyOHGLKbKY3GKKLE7cYoosJreYIouTyOLELU4iixO3uCOymNziFW4xRRaTW3y6WGs93sVa6/Eu1lqP98H/4BbvFFmcRBYnbnFHZHGHW0yRxRRZTG5xR2Rxh1tMkcXkFlNkceIW38UtTtxiiiymyGJyiymyuMMtpshiiizucIspsrjDLe5wizvc4isXa63Hu1hrPd7FWuvxPrgpsrjDLV7hFndEFiducRJZTG5xElmcuMUdbjFFFpNbTJHFSWTxT7nFSWRx4hZTZDG5xR1uMUUWk1tMkcXkFlNkceIWr4gs/qbIYnKLTxdrrce7WGs93sVa6/E++D8msjhxiymymCKL7+QWU2QxucVJZHESWZy4xRRZfMUtTiKLyS0mt5giixO3eEVkcYdbnLjFK9xiiiwmtziJLP6Wi7XW412stR7vYq31eB88TGQxucUdkcUUWdwRWZxEFiduMUUW3yWyuCOymNxicospsniFW0xuMUUWJ5HFiVtMkcXkFlNkMbnF5BavcIspspjc4p+6WGs93sVa6/Eu1lqP98FNbvGd3OKdIovJLV7hFlNkceIWJ5HFHW4xRRZTZPFd3OKd3GKKLE4ii5PI4sQtTtxiiiwmtziJLCa3mCKLyS2myGJyi3e5WGs93sVa6/Eu1lqP9+PnLwyRxd/kFlNkMbnFSWQxucUUWUxucRJZTG4xRRYnbvGKyGJyi3eKLD65xUlkceIWU2QxucVJZDG5xRRZnLjFSWTxCrf4N0UWr3CLTxdrrce7WGs93sVa6/F+/PyFtdajXay1Hu9irfV4/w/SIp4xpjquJgAAAABJRU5ErkJggg==",
+      "status": "CANCELLED",
+      "generatedAt": "2026-10-08T11:32:55.623Z",
+      "checkedInAt": "2026-10-08T11:32:55.634Z"
+    },
+    {
+      "ticketId": "tkt_1791459433451_901",
+      "bookingId": "bk_1791459406588_177",
+      "showId": "sh_104",
+      "userId": "usr_user_1",
+      "movieTitle": "Interstellar: Special IMAX Re-Release",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 2 - Dolby Atmos 4K",
+      "showDate": "2026-10-08",
+      "showTime": "20:15",
+      "seatNo": "C1, C2, C3, C4",
+      "seatNumbers": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "price": 2384,
+      "QRCode": "data:image/png;base64,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",
+      "status": "VALID",
+      "generatedAt": "2026-10-08T11:37:13.473Z",
+      "checkedInAt": null
+    },
+    {
+      "ticketId": "tkt_1792648226288_282",
+      "bookingId": "bk_1792648204947_768",
+      "showId": "sh_1792647313286",
+      "userId": "usr_user_1",
+      "movieTitle": "Oppenheimer",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-22",
+      "showTime": "18:30",
+      "seatNo": "A3, A4, F3, F4",
+      "seatNumbers": [
+        "A3",
+        "A4",
+        "F3",
+        "F4"
+      ],
+      "price": 2549,
+      "QRCode": "data:image/png;base64,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",
+      "status": "VALID",
+      "generatedAt": "2026-10-22T05:50:26.303Z",
+      "checkedInAt": null
+    },
+    {
+      "ticketId": "tkt_1792665657907_226",
+      "bookingId": "bk_1792665639970_195",
+      "showId": "sh_1792647313286",
+      "userId": "usr_user_1",
+      "movieTitle": "Oppenheimer",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-22",
+      "showTime": "18:30",
+      "seatNo": "C8",
+      "seatNumbers": [
+        "C8"
+      ],
+      "price": 561,
+      "QRCode": "data:image/png;base64,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",
+      "status": "VALID",
+      "generatedAt": "2026-10-22T10:40:57.923Z",
+      "checkedInAt": null
+    },
+    {
+      "ticketId": "tkt_1792665804289_299",
+      "bookingId": "bk_1792665800221_974",
+      "showId": "sh_1792665781859",
+      "userId": "usr_user_1",
+      "movieTitle": "Dune: Part Two",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-22",
+      "showTime": "18:30",
+      "seatNo": "B1, B2",
+      "seatNumbers": [
+        "B1",
+        "B2"
+      ],
+      "price": 1829,
+      "QRCode": "data:image/png;base64,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DvNgKSWdedCVks48WErJU+ZBV0ruMg+6UnKXedCVkh3z4E8xD3bMg66U7JSSP8U8eMo8WEpJZx58SilZLsYYr3cxxni9izHG633xP5SSHfPgO8yDpZScmAddKVlKSWce7JSSE/OgKyWLeXBiHuyYB99RSpZS0pkHXSnZKSUn5sFTpWTHPOhKyWIefEcpucs86ErJU6XkbzMPvqOU7JgHOxdjjNe7GGO83sUY4/W++E0p6cyDrpQspaQzD05KyWIedKWkMw/uKiV3mQddKenMg6WUdOZBV0o682CnlNxlHpyYBzulpDMP7iolnXlwVynpzIOllJyYBzvmwVPmQVdKulJyl3nQlZId86ArJV0p2TEPulLyCRdjjNe7GGO83hffZB4speTEPNgpJZ158JR50JWSxTzoSklnHnSlZDEPTsyDrpTsmAddKdkpJZ150JWSxTzozIOTUnJXKenMg6WUdObB31BKTsyDp8yDpZR0pWTHPPgO82ApJV0p6cyDrpTslJKdizHG612MMV7vYozxel/8xjz4lFKyYx6clJK7SslOKenMg7/BPDgxD7pSspgHd5WSzjzoSklnHiyl5MQ8+BPMgxPzYMc86ErJU+bBjnnQlZLOPFhKSWcedObBXebBU+ZBV0qWizHG612MMV7vYozxej9+/sI3mAdLKenMg7tKSWcefEopeco8WEpJZx48VUo68+CpUvKUeXBXKenMg6WUdObBp5SSu8yDrpTsmAcnpWQxD+4qJZ150JWSzjxYSsmJefBUKVkuxhivdzHGeL2LMcbr/fj5C415cFJKFvPgpJTcZR50pWTHPOhKSWceLKXkxDzYKSXfYR4speQ7zIOllHTmwV2l5C7z4KlScpd5cFJKdsyDk1LSmQc7peTEPFhKSWce3FVK7jIPulJyl3nQlZKdizHG612MMV7vi9+UkrtKSWcenJgHSynpSklnHuyUkpNSspgHXSnpSklnHjxVShbz4KSUdKVkMQ+6UvKUedCVkp1ScmIe3GUeLKWkMw+eKiVPmQcnpeRPMA+eMg+6UrKUkrsuxhivdzHGeL2LMcbrffEb8+CpUtKZB10p+QTz4KSU7JgHXSm5yzzoSsmnmAefYB50paQzD5ZS8h2lZMc86ErJXebBp5SSu8yDHfPgKfOgKyV3mQddKfmEizHG612MMV7vYozxel/8ppScmAdPmQdLKenMg66UdObBUkpOzIO7zINPMQ/uMg+6UnKXebCUkhPz4C7z4KSU7JSSzjx4qpTsmAddKdkxD77DPFhKSWcedKXkE8yDE/PgqVKyXIwxXu9ijPF6X/zGPOhKSVdKFvPgpJTsmAefYh50pWQxD7pScpd50JWSk1KyYx48ZR50pWQxD7pScpd50JWSzjzozIOllNxVSjrzoCslO+ZBV0o686ArJTul5C7z4C7zoCslJ+bBTim5yzy462KM8XoXY4zXuxhjvN6Pn79wYB7slJLOPOhKSWceLKWkMw+6UrJjHpyUksU8eKqUnJgHXSnZMQ9OSsliHnSlpDMP/nWlZMc8+JRSsmMenJSSTzAP/pRS0pkHO6Vk52KM8XoXY4zXuxhjvN6Pn7/wDzAPulJyl3nQlZId86ArJZ15cFcp2TEPulLSmQd3lZK7zIOulNxlHpyUksU8OCkld5kHO6XkO8yDpZScmAddKVnMg66UdObBXaXkLvPgrlLSmQddKVkuxhivdzHGeL2LMcbrffEb8+BvKCUn5sFOKTkxD54qJXeZB0+Vkk8wD77DPFhKyVOlpDMPOvNgKSXfUUp2zIOulHSlZDEP/oZS0pkHJ+bBUkpOSklnHjxxMcZ4vYsxxut98T+Ukk8xD3ZKyVOlZMc8ODEPulKymAffUUp2zIOTUrJjHnSl5KlSclcp6cyDpZR0paQzDxbz4Cnz4MQ86ErJUko686ArJTulpDMPulLyVCl5qpQs5kFXSnYuxhivdzHGeL2LMcbrffFN5sFdpeQu8+CuUtKZB3eVks486MyDpZScmAedebCUkq6UdObBjnnwKebBn2AenJSSHfPgxDxYSsmJebBjHnSlpDMPdkpJV0p2zIMT8+Ap86ArJUspuetijPF6F2OM17sYY7zeF/+IUnJiHuyUks48WEpJZx50paQzDxbz4KSU7JgH32Ee7JSSu0pJZx50peSpUrJjHvwJ5kFXSrpS0pkHSyn5jlKymAd3lZIT82CnlJyYB59wMcZ4vYsxxutdjDFe74v/I0rJYh6clJLFPOhKSWcedKVkMQ8+pZScmAd3mQefYB50paQzD7pSspgHXSnZMQ++o5Q8VUoW8+A7zIOdUrJjHnSlpCslnXmwmAddKbnLPDgpJcvFGOP1LsYYr/fFN5WSf00p+RTz4BNKyaeYB3eZB10p6cyDpZR05sFT5sFdpaQzDz7FPFhKSWcefIp5sGMedKVkp5T8DRdjjNe7GGO83sUY4/W++B/Mg7/BPLirlHTmQVdKllLSmQcnpeQu8+CpUrJTSk7Mg6WUdOZBZx7smAefUko68+CuUvKUefBUKenMg7tKyWIe/Cml5K5SsnMxxni9izHG612MMV7vx89fGGO82sUY4/Uuxhiv9/8A+VIOnHhDQKEAAAAASUVORK5CYII=",
+      "status": "VALID",
+      "generatedAt": "2026-10-22T10:43:24.300Z",
+      "checkedInAt": null
+    },
+    {
+      "ticketId": "tkt_1792668640844_809",
+      "bookingId": "bk_1792668617793_36",
+      "showId": "sh_1792665781859",
+      "userId": "usr_user_1",
+      "movieTitle": "Dune: Part Two",
+      "theaterName": "PVR Director's Cut, Palladium",
+      "screenName": "Audi 1 - IMAX with Laser 3D",
+      "showDate": "2026-10-22",
+      "showTime": "18:30",
+      "seatNo": "A3, A4",
+      "seatNumbers": [
+        "A3",
+        "A4"
+      ],
+      "price": 1829,
+      "QRCode": "data:image/png;base64,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",
+      "status": "VALID",
+      "generatedAt": "2026-10-22T11:30:40.862Z",
+      "checkedInAt": null
+    },
+    {
+      "ticketId": "tkt_1793261664274_965",
+      "bookingId": "bk_tkt_unit",
+      "showId": "sh_unit_tkt",
+      "userId": "usr_user_1",
+      "movieTitle": "Interstellar",
+      "theaterName": "PVR IMAX",
+      "screenName": "Audi 1",
+      "showDate": "2026-11-05",
+      "showTime": "20:00",
+      "seatNo": "E4",
+      "seatNumbers": [
+        "E4"
+      ],
+      "price": 413,
+      "QRCode": "data:image/png;base64,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",
+      "status": "CHECKED_IN",
+      "generatedAt": "2026-10-29T08:14:24.288Z",
+      "checkedInAt": "2026-10-29T08:14:24.289Z"
+    },
+    {
+      "ticketId": "tkt_1793261705565_802",
+      "bookingId": "bk_tkt_unit",
+      "showId": "sh_unit_tkt",
+      "userId": "usr_user_1",
+      "movieTitle": "Interstellar",
+      "theaterName": "PVR IMAX",
+      "screenName": "Audi 1",
+      "showDate": "2026-11-05",
+      "showTime": "20:00",
+      "seatNo": "E4",
+      "seatNumbers": [
+        "E4"
+      ],
+      "price": 413,
+      "QRCode": "data:image/png;base64,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",
+      "status": "CHECKED_IN",
+      "generatedAt": "2026-10-29T08:15:05.574Z",
+      "checkedInAt": "2026-10-29T08:15:05.575Z"
+    },
+    {
+      "ticketId": "tkt_1793261739746_362",
+      "bookingId": "bk_tkt_unit",
+      "showId": "sh_unit_tkt",
+      "userId": "usr_user_1",
+      "movieTitle": "Interstellar",
+      "theaterName": "PVR IMAX",
+      "screenName": "Audi 1",
+      "showDate": "2026-11-05",
+      "showTime": "20:00",
+      "seatNo": "E4",
+      "seatNumbers": [
+        "E4"
+      ],
+      "price": 413,
+      "QRCode": "data:image/png;base64,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",
+      "status": "CHECKED_IN",
+      "generatedAt": "2026-10-29T08:15:39.757Z",
+      "checkedInAt": "2026-10-29T08:15:39.758Z"
+    },
+    {
+      "ticketId": "tkt_1793261886121_872",
+      "bookingId": "bk_tkt_unit",
+      "showId": "sh_unit_tkt",
+      "userId": "usr_user_1",
+      "movieTitle": "Interstellar",
+      "theaterName": "PVR IMAX",
+      "screenName": "Audi 1",
+      "showDate": "2026-11-05",
+      "showTime": "20:00",
+      "seatNo": "E4",
+      "seatNumbers": [
+        "E4"
+      ],
+      "price": 413,
+      "QRCode": "data:image/png;base64,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",
+      "status": "CHECKED_IN",
+      "generatedAt": "2026-10-29T08:18:06.133Z",
+      "checkedInAt": "2026-10-29T08:18:06.135Z"
+    },
+    {
+      "ticketId": "tkt_1793261985162_32",
+      "bookingId": "bk_tkt_unit",
+      "showId": "sh_unit_tkt",
+      "userId": "usr_user_1",
+      "movieTitle": "Interstellar",
+      "theaterName": "PVR IMAX",
+      "screenName": "Audi 1",
+      "showDate": "2026-11-05",
+      "showTime": "20:00",
+      "seatNo": "E4",
+      "seatNumbers": [
+        "E4"
+      ],
+      "price": 413,
+      "QRCode": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9AAAAAklEQVR4AewaftIAABPjSURBVO3BwZElx45FwdNhJQCW0AH6i3J1wBIa9PQSlkaLZDJfFflj4P7r9x+MMY62GGMcbzHGON5ijHG8xRjjeF/8BfPgp1WKK/OgqxRPmQc7leIp86CrFJ150FWKO+ZBVyk68+BOpdgxD64qRWcedJWiMw+uKsWOeXCnUuyYB29Vis486CrFlXmwUynumAc/rVJ0izHG8RZjjOMtxhjH++JvqBSfZh58mnnwlnlwVSneMA/uVIrOPPi0SvETzIOuUnxapejMgzvmQVcp7lSKzjx4q1J8mnmwsxhjHG8xxjjeYoxxvC/+AfPgqUrxVKXozIOdSvFWpbgyD7pKsVMp7pgHnXnQVYq3zIO3zIOuUjxlHtypFG9UiivzYMc86CrFlXnw3cyDpyrFE4sxxvEWY4zjLcYYx/viP8w86CpFZx505sGdSrFjHtwxD3YqxZ1KsWMedJXiqUrxlnnQmQdXleJ/QaXYMQ+uKkVnHvwvWowxjrcYYxxvMcY43mKMcbwv/sMqxROV4o558FSl6MyDrlLsmAdPVYqnzINPqxR3zIOuUuyYB3fMg65SdObBnUrRmQf/Xy3GGMdbjDGOtxhjHO+Lf6BS/BeZB1eVoqsUnXnwlnnwVqXozIOuUjxVKZ4yD3bMg6tKsWMe3DEPukqxUynumAddpejMg65SXJkHXaX4tErx3RZjjOMtxhjHW4wxjvfF32Ae/BvMg65S7FSKK/OgqxQ7leLKPOgqRWcedJWiMw+uKkVnHnSVojMPrirFE+bBVaX4NPOgqxSdeXBVKTrzoKsUnXnQVYp/g3nQVYo75sFPW4wxjrcYYxxvMcY43q/ff/AfZR50leIt82CnUlyZB59WKTrzYKdSXJkHO5XiKfNgp1I8ZR78GyrFE+bBVaXozIOuUvwvWIwxjrcYYxxvMcY43mKMcbxfv//gwjzoKkVnHtypFJ158FSl6MyDrlLcMQ+6SrFjHjxVKZ4yD7pK0ZkH/0WV4o550FWKO+ZBVyk682CnUlyZB12leMo86CpFZx50leLKPOgqxY55cFUpOvNgp1J0izHG8RZjjOMtxhjH++IvVIrOPNipFFfmwU6luGMePGEeXFWKzjzoKsVTleK/qFLsmAdPVYrOPLhTKZ6qFDuVojMP3jIPukpxVSneqhT/tsUY43iLMcbxFmOM433xD1SKt8yD/6JKcWUedObBTqXozIOrSrFTKTrz4KpSdOZBVynuVIrOPHiqUnTmwU6leKtS/ATzYKdSdObBVaXozIOfthhjHG8xxjjeYoxxvC/+AfPgrUrxb6gUnXlwp1LsmAdPmQdvmQddpXjKPNgxDz7NPLhTKTrzoKsUnXlwxzz4NPOgqxRX5sFOpXiqUjyxGGMcbzHGON5ijHG8xRjjeF98k0rRmQededBViivzoKsUnXnQVYor8+DTzIOuUuxUiivzoKsUnXlwp1J05kFXKe5Uis486CrFHfNgp1J05sFVpejMg65SvFUpdsyDt8yDq0rRmQefZh50laJbjDGOtxhjHG8xxjjeF39DpdgxD+5Uih3z4C3z4KpSPGEe3KkUO+ZBVyneqhTfwTzoKsVTlWLHPHjLPNipFHfMg6cqxRPmwZV50FWKzjzoKsUd86CrFDuLMcbxFmOM4y3GGMf74i+YBzuVoqsUV+bBE5XijnmwUymuzIOuUnyaedBVis48uGMevFUpOvOgqxR3zIOdSvEdzIOdSvGUedBVih3z4Cnz4CeYB12leGIxxjjeYoxxvMUY43hf/APmQVcp7lSKtyrFW+ZBVyneqhSdefBUpdgxD64qxU6l6MyDq0rRVYod8+CqUjxRKZ4yD56qFJ150FWKp8yDpyrFv20xxjjeYoxxvMUY43iLMcbxfv3+gwvz4KdVijvmwU6luGMedJXiKfOgqxQ75sFVpejMg65SdObBU5XijnnwVqXozIOuUjxlHnSVYsc8uKoUnXmwUymuzIMnKsWVebBTKTrz4KlKsbMYYxxvMcY43mKMcbxfv//ghnnQVYo75sFOpejMg6tK8YR58FaluDIPukqxYx50leKOebBTKe6YB29VirfMg65SdObBnUqxYx48VSmeMg+6SrFjHlxViu9mHnSVoluMMY63GGMcbzHGON4Xf8E8eMI8uKoUnXnQmQefVimuzIOuUnTmwVPmQVcpukrxVqW4Yx7sVIo75kFnHnSVojMPfoJ50FWKrlJ05sFb5sFbleLKPNipFE+ZB12l2FmMMY63GGMcbzHGON4Xf6FS7JgHXaW4Mg92KkVnHtwxD7pK0ZkHb5kHV5XiCfOgqxR3KkVnHnSV4inz4KlKsVMprsyDrlI8VSk686AzD75bpbhjHuxUiqfMgzuVYsc86CpFtxhjHG8xxjjeYoxxvC/+BvPgqUrRmQededBViivzoKsUO5XiqUrRmQd3zIOuUuyYB2+ZB1eVojMPPs086CrFVaXozIOdSnFlHnxapfhfVCmuzIOuUjyxGGMcbzHGON5ijHG8xRjjeF/8DZXirUqxYx68ZR7cqRQ/rVJcmQddpdgxD67Mg65SvGUe7JgHV5WiqxSdedCZB1eVYsc8eMo82KkUn2YeXFWKHfPgTqXozIOdStEtxhjHW4wxjrcYYxzvi7/BPOgqRWceXFWKzjzYqRRX5kFnHnSV4inzYKdSXJkH3808eKpSdOZBVymeqhRvmQc7leLKPOgqRVcpnjIPdsyDT6sU38E86CpFZx7sLMYYx1uMMY63GGMc74t/wDy4Yx7sVIrOPLiqFDvmwZ1K0ZkHO+bBVaXozIOdSvFWpXiqUnTmQVcp7pgHXaW4Yx7sVIrOPHjKPOgqxZ1K0ZkHXaW4Yx50lWLHPLhTKZ6qFJ158MRijHG8xRjjeIsxxvF+/f6DG+bBTqW4Mg/eqhSdedBVijvmQVcpdsyDpypFZx50leInmAddpfgvMA/uVIod86CrFJ9mHlxVis486CrFHfOgqxQ/bTHGON5ijHG8xRjjeIsxxvG++AvmwU6l6MyDpyrFU5Vixzz4DpWiMw92KkVnHlxVirfMgyfMgzuVojMPnqoUXaV4q1LsmAdXlWLHPHiqUnyaedBVik9bjDGOtxhjHG8xxjjer99/cMM82KkUV+bBp1WKp8yDnUrRmQdXlaIzD7pK0ZkHXaW4Mg92KsUd8+CnVYqnzIM7laIzD7pK0ZkHXaW4Mg92KkVnHvwXVIo75kFXKXYWY4zjLcYYx1uMMY73xQeYB3cqxVPmwY550FWKq0rRmQc7leIp86CrFJ15cKdSdOZBVymeqhRPmQddpejMgzuVYqdS3KkUnXnwVKXozIPOPHiqUnTmQVcpnjIP7pgHXaXozIOuUnSLMcbxFmOM4y3GGMf74i+YB12l2DEPnjIPukpxxzzYMQ/uVIpPqxSdedBVijvmQVcp7lSKzjzYMQ+uKsVblaIzD75bpejMg59gHjxlHnSVYsc8+LTFGON4izHG8RZjjOMtxhjH++JvMA+6SvFWpXirUnTmwVWl2DEPukpxZR48USnumAc75kFXKa7MgycqxXcwD54wD+5UiicqxVvmwXeoFE9UijvmwROLMcbxFmOM4y3GGMf79fsPHjIPukpxZR58t0rRmQd3KsWOeXBVKTrzYKdSdObBVaXozIOuUnTmwb+hUjxlHnSVojMPripFZx7sVIqfYB50laIzDz6tUtwxD7pKsbMYYxxvMcY43mKMcbwv/oJ50FWKrlJ05sGdSvGUedBVis48eMo82KkU/0WV4o550FWKO+bBW+bBjnnwVqXozIM7leKtSrFTKf4NleKJxRjjeIsxxvEWY4zjffEXKsWOedBViivzYMc86CrFVaX4bpWiMw+uKsUbleLKPPi0SvFWpejMg65SXFWKzjzoKsUd82DHPPhu5sFVpXjCPLiqFE+YB3cqRWcedJWiW4wxjrcYYxxvMcY43mKMcbxfv//gwjx4q1J05kFXKe6YB12l2DEPrirFE+bBVaXYMQ+6SvGUebBTKX6CebBTKa7Mg65SdObBnUqxYx50leKOebBTKZ4yD3YqxR3zoKsUnXlwVSneWIwxjrcYYxxvMcY43hf/QKW4Yx50laIzD7pKcVUpOvOgqxRdpbhjHuxUiivzoKsUO+ZBVymuzIMnzIOrSvGEeXBVKbpKsWMeXFWKzjzYqRRX5kFXKZ4wD76DefCWefBEpXjKPOgqRbcYYxxvMcY43mKMcbwv/oZK0ZkHb1WKzjy4Uyl2zIOrStFViqcqxU6l6MyDzjy4Uyk68+Ap86CrFE+ZBzuV4qlK0ZkHT1WKzjy4Uyk68+CtStGZB09Vis486CrFHfOgqxQ7izHG8RZjjOMtxhjH++IvVIqdSvGUebBTKZ4yD+6YB12l6MyDrlLcMQ92KkVnHlxVis486CrFHfPgiUrxHcyDtyrFjnnQVYo75sET5sFVpfg082DHPLiqFF2leGIxxjjeYoxxvMUY43iLMcbxfv3+g29gHuxUis48uKoU3808eKpSdObBd6sUV+bBTqW4Yx7sVIq3zIOuUtwxD7pK0ZkHXaW4Yx48VSk686CrFJ15cKdS7JgHV5XijcUY43iLMcbxFmOM433xN5gHXaXozIOnzIOuUtwxD7pKccc86CrFTqV4q1J05sFVpfhu5sFTlaIzD7pKcWUedJVixzx4q1LcMQ+6StGZB12luDIPukrRmQddpXjKPOgqxZV50FWKJxZjjOMtxhjHW4wxjvfr9x9cmAdvVYrOPOgqRWcevFUprsyDJyrFW+bBp1WKp8yDrlK8ZR48VSk68+CqUnTmwU+rFHfMg51KcWUePFEprsyDJypFtxhjHG8xxjjeYoxxvC/+JeZBVymuzIOdStGZB1eVojMPukrRmQdXlaIzD56oFHfMgx3z4KpS7FSKO+bBp1WKnUpxp1I8YR5cVYrOPPi0SvFUpejMg6cqRWce7CzGGMdbjDGOtxhjHO+Lv1ApOvNgp1LcqRRPVYrOPOjMg59gHnSVojMPukpxxzzYqRR3zIOuUnTmwU+oFJ150FWKzjy4Uyl2zIOnKkVnHnTmwVvmwXeoFG8sxhjHW4wxjrcYYxxvMcY43hd/wTzYqRR3zIO3KsVOpejMg6fMg6fMgyfMg6tK8WnmwVOVojMPukpxxzx4q1J05kFXKZ4yDz6tUnTmQVcp7pgHXaV4q1LsLMYYx1uMMY63GGMc79fvP7gwD56oFHfMg65SdObBT6gUnXnQVYor82CnUjxlHnSVojMP7lSKzjzoKsUd82CnUnTmwVWl2DEP7lSKzjx4olJcmQdPVIq3zIOrStGZBzuV4inzoKsU3WKMcbzFGON4izHG8b74GypFZx505sGdStGZB12luDIPdipFZx5cVYqdStGZB1eVojMPOvOgqxSdeXBVKTrzoKsUnXlwZR78F5gHT1SKO5Vixzy4Uyk686CrFJ15cFUp3jIPukqxYx48VSl2FmOM4y3GGMdbjDGO9+v3HzxkHtypFG+ZB12l6MyDtyrFU+ZBVyk68+AnVIrOPOgqxaeZB1eV4i3zoKsUnXmwUymuzIMnKsUd82CnUnwH86CrFJ150FWKbjHGON5ijHG8xRjjeIsxxvG++AvmQVcpdirFHfPg31ApOvOgMw/uVIquUnTmQVcpOvPgTqXozIOuUlyZB12leMs82KkUV+bBE5XijnnQVYod8+CpSnHHPOgqxVPmQVcpdsyDT1uMMY63GGMcbzHGON6v339wYR58WqV4yzx4qlJ05sGnVYpPMw+eqhSdeXCnUjxhHtypFJ15cKdSdObBTqV4yjz4X1Ap7pgHO5WiW4wxjrcYYxxvMcY43q/ff/AvMA+6SnFlHuxUijvmwU6leMo82KkUT5kHO5Xijnnw3SrFW+bBVaX4buZBVyk68+CqUuyYB59WKT5tMcY43mKMcbzFGON4X/xLKsVTleKtStGZB12luDIPdipFZx68VSnumAc7leIp86CrFJ15cFUpPs086CpFZx7cqRRdpejMg6fMg51K8ZR58N0WY4zjLcYYx1uMMY63GGMc74u/YB78tErxE8yDrlJ05sGdStGZB59mHnyaeXBVKZ6oFHfMg6fMg08zD94yD7pK0ZkHd8yDrlL8tMUY43iLMcbxFmOM433xN1SKTzMP3jIPPq1SPFUpdsyDpyrFU+bBTqV4yjx4qlJ05kFXKe6YB09UiivzoKsUnXnwEyrFE+bBU5ViZzHGON5ijHG8xRjjeF/8A+bBU5XiqUrRmQefZh50leLKPOgqRWcedJXiqUrxaebBW5WiMw+uKkVnHrxVKTrzoKsUnXlwxzzYqRRvmQf/BvOgqxTdYoxxvMUY43iLMcbxvvgPMw+6StGZB12luDIPukqxYx5cVYpPqxQ/rVI8ZR50leLKPNipFJ15cKdSPFEp3jIP7lSKpyrFp5kHXaXYWYwxjrcYYxxvMcY43mKMcbwvDmIeXFWKzjx4yzzoKkVnHrxlHrxVKd6qFD+hUnTmQVcpOvOgqxRPmQddpXirUlyZBzuVojMP7lSKJxZjjOMtxhjHW4wxjvfFP1ApfkKl6MyDrlI8VSk686CrFG9Vik+rFFfmwY550FWK71ApOvOgMw/eMg+6StGZB1eV4i3zoKsUXaXozIM7laIzD+5Uih3zoKsU3WKMcbzFGON4izHG8X79/oML8+CnVYor8+CJSnHHPOgqxb/BPNipFJ15cKdSdObBnUrRmQc7leI7mAc7laIzD56qFDvmwVOV4tPMgzuV4onFGON4izHG8RZjjOP9+v0HY4yjLcYYx1uMMY63GGMc7/8A01gZpTIMtoYAAAAASUVORK5CYII=",
+      "status": "CHECKED_IN",
+      "generatedAt": "2026-10-29T08:19:45.177Z",
+      "checkedInAt": "2026-10-29T08:19:45.179Z"
+    },
+    {
+      "ticketId": "tkt_1793262336129_29",
+      "bookingId": "bk_tkt_unit",
+      "showId": "sh_unit_tkt",
+      "userId": "usr_user_1",
+      "movieTitle": "Interstellar",
+      "theaterName": "PVR IMAX",
+      "screenName": "Audi 1",
+      "showDate": "2026-11-05",
+      "showTime": "20:00",
+      "seatNo": "E4",
+      "seatNumbers": [
+        "E4"
+      ],
+      "price": 413,
+      "QRCode": "data:image/png;base64,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",
+      "status": "CHECKED_IN",
+      "generatedAt": "2026-10-29T08:25:36.161Z",
+      "checkedInAt": "2026-10-29T08:25:36.164Z"
+    }
+  ]
+}

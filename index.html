@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novella E-Ticket System - VS Code Developer Portal</title>
+  <link rel="icon" type="image/svg+xml" href="./frontend/public/favicon.svg">
+  <style>
+    :root {
+      --bg-dark: #08090d;
+      --card-bg: rgba(18, 21, 31, 0.85);
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.2);
+      --green: #10b981;
+      --red: #f43f5e;
+      --amber: #f59e0b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 10% 90%, rgba(244, 63, 94, 0.08) 0%, transparent 40%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 40px -10px var(--accent-glow);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-badge {
+      width: 52px;
+      height: 52px;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 8px 20px -4px rgba(56, 189, 248, 0.5);
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 640px) {
+      .status-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .status-card {
+      background: rgba(11, 14, 22, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.25s ease;
+    }
+
+    .status-card:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .status-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .status-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .badge-online {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .badge-offline {
+      background: rgba(244, 63, 94, 0.15);
+      color: #fb7185;
+      border: 1px solid rgba(244, 63, 94, 0.3);
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .status-url {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.08);
+      padding: 6px 10px;
+      border-radius: 8px;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7, #0ea5e9);
+      color: #ffffff;
+      box-shadow: 0 4px 14px -2px rgba(14, 165, 233, 0.5);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0369a1, #0284c7);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: #e2e8f0;
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .command-box {
+      background: #040507;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .code-text {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: #38bdf8;
+      font-size: 14px;
+    }
+
+    .cred-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .cred-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cred-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 12px;
+    }
+
+    .cred-role {
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    .cred-item {
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-family: ui-monospace, monospace;
+      font-size: 11px;
+    }
+
+    .tip-banner {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: #bae6fd;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo-badge">🎬</div>
+      <div>
+        <h1>Novella E-Ticket Management System</h1>
+        <div class="subtitle">VS Code Developer Launchpad & Real-Time Service Status</div>
+      </div>
+    </div>
+
+    <div class="status-grid">
+      <!-- Frontend Dev Status -->
+      <div class="status-card">
+        <div class="status-header">
+          <div class="status-title">
+            <span>🎨</span>
+            <span>Frontend (Vite React HMR)</span>
+          </div>
+          <span id="frontend-badge" class="badge badge-offline">
+            <span class="dot"></span>
+            <span id="frontend-text">CHECKING</span>
+          </span>
+        </div>
+        <a href="http://localhost:3000" target="_blank" class="status-url">http://localhost:3000</a>
+        <a id="frontend-btn" href="http://localhost:3000" target="_blank" class="btn btn-primary">
+          Open Frontend (Port 3000) ↗
+        </a>
+      </div>
+
+      <!-- Backend Server Status -->
+      <div class="status-card">
+        <div class="status-header">
+          <div class="status-title">
+            <span>⚡</span>
+            <span>Backend & Unified App</span>
+          </div>
+          <span id="backend-badge" class="badge badge-offline">
+            <span class="dot"></span>
+            <span id="backend-text">CHECKING</span>
+          </span>
+        </div>
+        <a href="http://localhost:5000" target="_blank" class="status-url">http://localhost:5000</a>
+        <a id="backend-btn" href="http://localhost:5000" target="_blank" class="btn btn-secondary">
+          Open Unified Site (Port 5000) ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="section-title">⚡ VS Code 1-Click Launch Options</div>
+    <div class="command-box">
+      <div>
+        <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 4px;">Run in VS Code Integrated Terminal:</div>
+        <div class="code-text">npm run dev</div>
+      </div>
+      <button class="btn btn-secondary" onclick="navigator.clipboard.writeText('npm run dev'); this.innerText = 'Copied!'; setTimeout(() => this.innerText = 'Copy Command', 2000);">
+        Copy Command
+      </button>
+    </div>
+
+    <div class="section-title">🔑 Quick Demo Credentials (Pre-Seeded)</div>
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cred-role">Administrator</div>
+        <div class="cred-item">admin@eticket.com</div>
+        <div class="cred-item">Pass: admin123</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-role">Theater Host (PVR)</div>
+        <div class="cred-item">host@pvr.com</div>
+        <div class="cred-item">Pass: host123</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-role">Customer User</div>
+        <div class="cred-item">user@demo.com</div>
+        <div class="cred-item">Pass: user123</div>
+      </div>
+    </div>
+
+    <div class="tip-banner">
+      <span style="font-size: 18px;">💡</span>
+      <div>
+        <strong>VS Code Keyboard Shortcuts:</strong> Press <kbd style="background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border);">Ctrl+Shift+B</kbd> to launch dev servers, or press <kbd style="background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border);">F5</kbd> to run with debugging attached.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function checkServer(url) {
+      try {
+        const res = await fetch(url, { method: 'HEAD', mode: 'no-cors', cache: 'no-store' });
+        return true;
+      } catch (err) {
+        return false;
+      }
+    }
+
+    async function checkApiHealth() {
+      try {
+        const res = await fetch('http://localhost:5000/api/health', { cache: 'no-store' });
+        return res.ok;
+      } catch (err) {
+        return false;
+      }
+    }
+
+    let redirected = false;
+
+    async function updateStatus() {
+      const isFrontendLive = await checkServer('http://localhost:3000');
+      const isBackendLive = await checkApiHealth();
+
+      const fBadge = document.getElementById('frontend-badge');
+      const fText = document.getElementById('frontend-text');
+      if (isFrontendLive) {
+        fBadge.className = 'badge badge-online';
+        fText.textContent = 'ONLINE';
+        if (!redirected && window.location.search.includes('autoredirect')) {
+          redirected = true;
+          window.location.href = 'http://localhost:3000';
+        }
+      } else {
+        fBadge.className = 'badge badge-offline';
+        fText.textContent = 'OFFLINE';
+      }
+
+      const bBadge = document.getElementById('backend-badge');
+      const bText = document.getElementById('backend-text');
+      if (isBackendLive) {
+        bBadge.className = 'badge badge-online';
+        bText.textContent = 'ONLINE';
+      } else {
+        bBadge.className = 'badge badge-offline';
+        bText.textContent = 'OFFLINE';
+      }
+    }
+
+    updateStatus();
+    setInterval(updateStatus, 2500);
+  </script>
+</body>
+</html>

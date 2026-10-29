@@ -1,0 +1,70 @@
+{
+  // Code Formatting & Editing
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+
+  // Language & File Associations
+  "files.associations": {
+    "*.css": "tailwindcss",
+    ".env*": "dotenv",
+    "*.jsx": "javascriptreact"
+  },
+
+  // Emmet & JSX Support
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+
+  // Tailwind CSS IntelliSense & CSS Linter Configuration
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascriptreact",
+    "javascriptreact": "javascriptreact",
+    "html": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+
+  // Performance Excludes for Fast VS Code Indexing on Windows
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/frontend/dist": true,
+    "**/.git": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/frontend/dist/**": true,
+    "**/.git/objects/**": true
+  },
+
+  // VS Code Live Server Extension Settings
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.root": "/frontend/dist",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "livePreview.defaultPort": 3000,
+
+  // Port Forwarding Attributes for VS Code Ports Panel
+  "portsAttributes": {
+    "3000": {
+      "label": "Frontend (Vite Dev Server)",
+      "onAutoForward": "openBrowserOnce"
+    },
+    "5000": {
+      "label": "Backend (Express API & Web Server)",
+      "onAutoForward": "silent"
+    }
+  }
+}

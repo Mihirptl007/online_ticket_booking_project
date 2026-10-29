@@ -1,0 +1,300 @@
+================================================================================
+          MOVIE & EVENT E-TICKET MANAGEMENT SYSTEM - FULL DOCUMENTATION
+================================================================================
+Project Name  : Novella E-Ticket Management System
+Architecture  : Full-Stack (Node.js/Express REST API + React Vite Tailwind Frontend)
+Version       : 1.0.0 Production Ready
+
+
+================================================================================
+1. DEFAULT CREDENTIALS & DEMO PASSCODES
+================================================================================
+
+Role: ADMINISTRATOR (Full Control)
+----------------------------------
+  Email        : admin@eticket.com
+  Passcode     : admin123
+  Permissions  : Manage Movies, Manage Theaters, Manage Shows, Cancel Bookings,
+                 Block/Unblock Users, View Financial Reports & Platform Analytics.
+
+Role: THEATER HOST 1 (PVR INOX Entertainments)
+-----------------------------------------------
+  Email        : host@pvr.com
+  Passcode     : host123
+  Host UPI ID  : pvr.cinemas@icici
+  Host Name    : PVR CINEMAS ENTERTAINMENT LTD
+  Permissions  : Add Theaters/Screens, Schedule Movie Shows, Configure Host UPI
+                 QR code, Entrance Gate Ticket Scanner & Check-in, View Host Revenue.
+
+Role: THEATER HOST 2 (Cinépolis Luxury Cinemas)
+-----------------------------------------------
+  Email        : host@cinepolis.com
+  Passcode     : host123
+  Host UPI ID  : cinepolis.india@okhdfcbank
+  Host Name    : CINEPOLIS INDIA PVT LTD
+  Permissions  : Theater & Show Scheduling, UPI QR, Ticket Check-in.
+
+Role: CUSTOMER USER (Demo Account)
+-----------------------------------
+  Email        : user@demo.com
+  Passcode     : user123
+  Permissions  : Browse Movies, City Selector, Interactive Seat Selection,
+                 10-Min Temporary Seat Hold, Pay via Host UPI QR, Download E-Ticket,
+                 Cancel Booking.
+
+* Note: The application also includes 1-Click Quick Demo Login buttons in the UI
+  and Navbar for seamless testing across all 3 roles.
+
+
+================================================================================
+2. SYSTEM ARCHITECTURE & FILE DIRECTORY MAP
+================================================================================
+
+eticket-system/
+├── package.json                       - Root npm scripts to run backend & frontend
+├── PROJECT_DOCUMENTATION.txt          - This comprehensive system documentation
+│
+├── backend/
+│   ├── server.js                      - Express server entry point, CORS, logging, port 5000
+│   ├── config/                        - Environment variables & system configuration
+│   ├── data/
+│   │   ├── db.js                      - Transactional JSON database engine with seed data
+│   │   └── database.json              - Auto-generated persistent disk storage
+│   ├── models/
+│   │   ├── User.js                    - User entity with login(), register(), bookTicket()
+│   │   ├── Movie.js                   - Movie entity with getDetails(), getShows()
+│   │   ├── Theater.js                 - Theater entity with getShows(), getTheaterDetails()
+│   │   ├── Show.js                    - Show entity with getSeats(), isSeatAvailable(), getShowDetails()
+│   │   ├── Seat.js                    - Seat entity with reserveSeat(), releaseSeat()
+│   │   ├── Booking.js                 - Booking entity with confirmBooking(), cancelBooking()
+│   │   ├── Payment.js                 - Payment entity with pay(), refund(), getPaymentDetails()
+│   │   └── Ticket.js                  - Ticket entity with generate(), cancel(), getTicketDetails()
+│   ├── services/
+│   │   ├── ShowAndSeatService.js      - Seat matrix generator, availability check, 10-min hold TTL
+│   │   ├── PaymentService.js          - Host dynamic UPI QR generator & pluggable partner adapter
+│   │   ├── TicketService.js           - Cryptographic E-Ticket generator & gate check-in scanner
+│   │   └── BookingService.js          - Booking coordinator across hold, payment, and tickets
+│   ├── controllers/
+│   │   ├── AuthController.js          - User/Host/Admin authentication & registration
+│   │   ├── MovieController.js         - Movies catalog CRUD & filters
+│   │   ├── TheaterController.js       - Theaters & multi-screen management
+│   │   ├── ShowController.js          - Show scheduling and seat matrix API
+│   │   ├── BookingController.js       - Hold seats, create, confirm and cancel bookings
+│   │   ├── PaymentController.js       - UPI QR generation, UTR verification, gateway info
+│   │   ├── TicketController.js        - Ticket retrieval and entrance gate scanner
+│   │   ├── ReportController.js        - Admin & Host financial reports and occupancy analytics
+│   │   └── UserController.js          - User administration, block/unblock, host UPI profile
+│   └── routes/
+│       └── api.js                     - Unified REST API routes mounted at /api
+│
+└── frontend/
+    ├── package.json                   - React 19, Vite 8, Tailwind v4, Lucide, QRCode, Canvas-Confetti
+    ├── vite.config.js                 - Vite configuration with proxy to http://localhost:5000
+    ├── index.html                     - HTML entry template with Novella brand metadata
+    └── src/
+        ├── index.css                  - Sleek luxury CSS with glassmorphism & cinema screen curve
+        ├── App.jsx                    - Root application component & view routing
+        ├── services/
+        │   └── api.js                 - Complete API client service for all backend endpoints
+        └── components/
+            ├── Navbar.jsx             - Header with city picker, search, and 1-click role switcher
+            ├── MovieCard.jsx          - High-res poster, rating badge, format tags, book button
+            ├── MovieDetailsModal.jsx  - Backdrop banner, synopsis, cast, date pills & showtimes
+            ├── SeatPickerModal.jsx    - Curved cinema screen, tiered seating (VIP/Gold/Silver), hold timer
+            ├── BookingReviewModal.jsx - 10-minute hold countdown, price breakdown (subtotal, fee, GST)
+            ├── PaymentPortalModal.jsx - Host verified UPI QR code, UTR submission, instant demo simulator
+            ├── TicketModal.jsx        - Perforated digital boarding-pass ticket with live QR & print/PDF
+            ├── UserBookingsView.jsx   - Customer ticket history, active tickets, cancellation & refund
+            ├── TheatersView.jsx       - Theater-first venue browsing with auditorium specifications
+            ├── HostDashboardView.jsx  - Host studio: UPI settings, theater/show setup, gate scanner
+            ├── AdminDashboardView.jsx - Admin console: movies, theaters, shows, bookings, users, analytics
+            └── AuthModal.jsx          - Sign In / Register modal with User, Host, Admin quick logins
+
+
+================================================================================
+3. SYSTEM SEQUENCE FLOWS
+================================================================================
+
+A) ADMIN MANAGEMENT SEQUENCE FLOW (Matching Project Reference Diagram)
+-----------------------------------------------------------------------
+
+Admin          Admin Panel          System              Database
+  |                |                  |                    |
+  |-- Login ------>|                  |                    |
+  |                |-- Credentials -->|                    |
+  |                |                  |-- Verify --------->|
+  |                |                  |<-- Valid ----------|
+  |                |<-- Dashboard ---|                    |
+  |                |                  |                    |
+  |-- Add Movie -->|                  |                    |
+  |                |-- Movie Data --->|                    |
+  |                |                  |-- Save Movie ----->|
+  |                |                  |<-- Success --------|
+  |                |<-- Confirmation-|                    |
+  |                |                  |                    |
+  |-- Add Show --->|                  |                    |
+  |                |-- Show Data ---->|                    |
+  |                |                  |-- Save Show ------>|
+  |                |                  |<-- Success --------|
+  |                |<-- Confirmation-|                    |
+  |                |                  |                    |
+  |-- Manage ----->|                  |                    |
+  |   Bookings     |                  |                    |
+  |                |-- Request ------>|                    |
+  |                |                  |-- Fetch ---------->|
+  |                |                  |<-- Booking Data ---|
+  |                |<-- Display ------|                    |
+  |                |                  |                    |
+  |-- View Reports>|                  |                    |
+  |                |-- Report Request>|                    |
+  |                |                  |-- Get Data ------->|
+  |                |<-- Reports ------|<-- Data -----------|
+  |                |                  |                    |
+  |-- Logout ----->|                  |                    |
+  |                |-- Logout ------->|                    |
+  |<-- Login Page -|                  |                    |
+
+
+B) USER TICKET BOOKING & PAYMENT FLOW
+--------------------------------------
+
+User           Web UI             Booking Service       Payment / UPI QR       Database
+  |               |                     |                     |                    |
+  |-- Select Show>|                     |                     |                    |
+  |-- Pick Seats->|                     |                     |                    |
+  |-- Hold Seats->|-- Hold Request ---->|-- Check Avail ----->|                    |
+  |               |                     |-- Lock (10m TTL) -->|-- Save Hold ----->|
+  |               |<-- Held (Timer) ----|                     |                    |
+  |               |                     |                     |                    |
+  |-- Review & Pay|-- Generate QR ----->|-- Host VPA Lookup ->|                    |
+  |               |                     |<-- Dynamic UPI QR --|                    |
+  |               |<-- Display Host QR -|                     |                    |
+  |               |    (Amount Encoded) |                     |                    |
+  |-- Scan / Pay->|-- Submit UTR/Verify>|-- Process Payment ->|-- Record Pay ----->|
+  |               |                     |-- Permanent Book -->|-- Update Seats --->|
+  |               |                     |-- Generate Ticket ->|-- Save Ticket ---->|
+  |               |<-- E-Ticket + QR ---|                     |                    |
+  |-- Download -->|                     |                     |                    |
+
+
+================================================================================
+4. PAYMENT GATEWAY IMPLEMENTATION & HOST UPI QR DETAILS
+================================================================================
+
+Payment Philosophy:
+- As requested, third-party payment partner integration is on hold until merchant
+  onboarding completes.
+- In the meantime, the software features a full **Host Direct UPI QR Gateway**:
+  1. The event/movie host defines their official UPI VPA (e.g., `pvr.cinemas@icici`)
+     and Business Name (`PVR CINEMAS ENTERTAINMENT LTD`) via the Host Studio portal.
+  2. When a customer confirms their seats, the backend constructs an official NPCI
+     UPI URI string:
+     `upi://pay?pa={HOST_UPI}&pn={HOST_NAME}&am={AMOUNT}&cu=INR&tn=Ticket-{BOOKING_ID}`
+  3. The backend renders this into a dynamic high-resolution QR Code (Data URL PNG).
+  4. The customer scans the QR code using any UPI app (GPay, PhonePe, Paytm, BHIM)
+     where the exact booking amount is pre-filled.
+  5. The customer can either enter the 12-digit transaction UTR number or click
+     "Instant UPI Payment Simulation (1-Click)" to immediately verify the payment.
+  6. Upon verification, the booking is permanently CONFIRMED and the E-Ticket with
+     entrance QR code is instantly issued.
+
+Attaching Real Payment Partners (Razorpay / Stripe):
+-----------------------------------------------------
+The architecture in `backend/services/PaymentService.js` contains pluggable partner
+adapters. To activate Razorpay or Stripe:
+1. Open `backend/.env` (or environment variables) and set:
+   RAZORPAY_KEY_ID=your_actual_key_id
+   RAZORPAY_KEY_SECRET=your_actual_key_secret
+2. The `RazorpayAdapter` will automatically enable server-side order creation and
+   webhook verification.
+
+
+================================================================================
+5. REST API ENDPOINTS SPECIFICATION
+================================================================================
+
+Authentication:
+  POST   /api/auth/login               - Login with email, password, role
+  POST   /api/auth/register            - Register user or host (with UPI ID)
+  GET    /api/auth/me                  - Verify token session
+
+Movies:
+  GET    /api/movies                   - List movies (search, genre filters)
+  GET    /api/movies/:id               - Get movie details and shows
+  POST   /api/movies                   - Add new movie (Admin/Host)
+  PUT    /api/movies/:id               - Update movie (Admin)
+  DELETE /api/movies/:id               - Delete movie (Admin)
+
+Theaters:
+  GET    /api/theaters                 - List theaters by city or host
+  GET    /api/theaters/:id             - Get theater details & screens
+  POST   /api/theaters                 - Create theater venue (Host/Admin)
+  PUT    /api/theaters/:id             - Edit theater (Host/Admin)
+  DELETE /api/theaters/:id             - Delete theater (Admin)
+
+Shows:
+  GET    /api/shows                    - List scheduled shows (movie, date filters)
+  GET    /api/shows/:id                - Get show details
+  GET    /api/shows/:id/seats          - Get dynamic seat matrix (status & tiers)
+  POST   /api/shows                    - Schedule new show (Host/Admin)
+  PUT    /api/shows/:id                - Update show (Host/Admin)
+  DELETE /api/shows/:id                - Delete show (Host/Admin)
+
+Bookings:
+  POST   /api/bookings/hold            - Temporary hold seats (10 min TTL)
+  POST   /api/bookings/confirm         - Confirm booking after payment
+  POST   /api/bookings/cancel/:id      - Cancel booking & release seats
+  GET    /api/bookings/user/:userId    - User booking history
+  GET    /api/bookings/host/:hostId    - Host bookings list
+  GET    /api/bookings/all             - Admin all bookings list
+
+Payments:
+  POST   /api/payments/generate-upi-qr - Generate Host UPI QR code data URL
+  POST   /api/payments/verify          - Verify payment & confirm booking
+  GET    /api/payments/gateway-info    - Status of pluggable payment partners
+
+Tickets:
+  GET    /api/tickets/:id              - Get e-ticket details & QR code
+  POST   /api/tickets/scan             - Cinema gate scanner entrance check-in
+
+Reports:
+  GET    /api/reports/admin            - Platform gross revenue & analytics
+  GET    /api/reports/host/:hostId     - Host revenue, ticket sales, shows
+
+Users:
+  GET    /api/users                    - List all user accounts
+  PATCH  /api/users/:userId/status     - Block / Unblock user account
+  PUT    /api/hosts/:hostId/profile    - Update host UPI VPA and profile
+
+
+================================================================================
+6. HOW TO RUN THE APPLICATION
+================================================================================
+
+Prerequisites:
+  - Node.js (v18 or higher, tested on Node v24)
+  - npm (v9 or higher)
+
+Step 1: Open Terminal in Project Directory
+  cd C:\Users\mihir\.gemini\antigravity\scratch\eticket-system
+
+Step 2: Run Both Backend & Frontend Simultaneously
+  npm run dev
+
+  - Backend starts on  : http://localhost:5000
+  - Frontend starts on : http://localhost:3000
+
+Step 3: Access in Browser
+  Open your web browser and navigate to:
+  http://localhost:3000
+
+Step 4: Explore the 3 Roles
+  - Customer View   : Browse movies, pick seats, hold seats, scan UPI QR, get ticket.
+  - Host Studio     : Click 'Demo Roles' -> 'Host' or sign in as host@pvr.com.
+                      Configure your UPI ID, schedule shows, and scan tickets.
+  - Admin Console   : Click 'Demo Roles' -> 'Admin' or sign in as admin@eticket.com.
+                      Manage movies, theaters, users, and review financial charts.
+
+================================================================================
+End of Documentation
+================================================================================
